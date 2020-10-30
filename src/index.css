@@ -1,13 +1,24 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  /* background-color: rgb(82, 206, 233); */
+  font-family: -apple-system,'Ubuntu' BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* code {
+  font-family: 'Ubuntu', sans-serif;
+} */
+  h1.rainbow-text {
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Ubuntu', sans-serif;
+   text-align: center;
+   font-size: 50px;
+    font-weight: bold;
+    background-image: linear-gradient(to left, rgb(225, 49, 225), rgb(235, 69, 235), rgb(82, 182, 244), rgb(225, 93, 225), rgb(120, 210, 244), rgb(237, 180, 94), rgb(255, 0, 234));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+  
 }

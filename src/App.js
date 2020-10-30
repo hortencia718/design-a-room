@@ -1,18 +1,23 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
+import './App.css';
 
 
-let sayHello = () => {
-  console.log("hello")
-};
+class App extends React.Component {
 
-function App(){
+
+
+render (){
+
   return(
-    <div>
-      <h1>Design me a room</h1>
-      <h2>login form goes here</h2>
-      <button onClick={sayHello}>hello</button>
+    <div className="App">
+      {/* <Header title="color me a Room"/> */}
+      <h1 className="rainbow-text">Color me a Room</h1>
+      {/* <Login /> */}
+     
     </div>
   )
 }
+}
+
 export default App
