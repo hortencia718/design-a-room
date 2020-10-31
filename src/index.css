@@ -16,7 +16,7 @@ body {
    text-align: center;
    font-size: 50px;
     font-weight: bold;
-    background-image: linear-gradient(to left, rgb(225, 49, 225), rgb(235, 69, 235), rgb(82, 182, 244), rgb(225, 93, 225), rgb(120, 210, 244), rgb(237, 180, 94), rgb(255, 0, 234));
+    background-image: linear-gradient(to left, rgb(225, 49, 225), rgb(235, 69, 235), rgb(82, 182, 244), rgb(93, 225, 159), rgb(228, 120, 244), rgb(227, 89, 39), rgb(255, 0, 234));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   
