@@ -3,7 +3,7 @@ import React from 'react';
 import './index.css';
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
-import Login from './Components/login'
+import LoginForm from './components/LoginForm'
 
 class App extends React.Component {
 
@@ -18,7 +18,7 @@ render (){
   return(
     <div className="App">
       <h1 className="rainbow-text">Color me a Room</h1>
-      <Login />
+      <LoginForm  UserName="hortencia"/>
      
     </div>
   )
