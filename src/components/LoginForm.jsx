@@ -3,41 +3,85 @@ import ReactDOM from 'react-dom';
 
 export class LoginForm extends Component {
 
+    state = {
+        username: "",
+        email: "",
+        password: ""
+      }
+
+
+      handleSubmit = (evt) => {
+          evt.preventDeFault()
+          this.props.handleSubmit(this.state)
+        //   console.log("username")
+      }
+
+
+
+     handleChange = (evt) => {
+        let {name, value} = evt.target 
+        this.setState({
+            [name]: value
+        })
+    }
+
+
+
     render() {
-        console.log(this.props.UserName)
-        return (
-            
+        let {formName} = this.props
+        let {username, email, password} = this.state
+        // console.log(this.props.userame)
+
+
+            return (
                 <div className ="base-container">
+                     <h1>{formName}</h1>
                      <div className= "header">Login</div>
+                       
+                     <br></br>
                     <div className="content">
                    <div className="image">
                         {/* <img src={loginImg}/> */}
                     </div>
                      <div className="form">
                          <div className="form-group">
-                              <label htmlFor="Username">User name</label>
-                              <input type="text" name="username" placeholder="user name"/>
+
+                              <label htmlFor="username">User name</label>
+                              <input type="text" id="username" 
+                              name="username"
+                              value={username}
+                              onChange={this.handleChange}/> 
                              </div>
                              <div className="form-group">
-                              <label htmlFor="Email">Email</label>
-                              <input type="email" name="email" placeholder="email"/>
+
+                              <label htmlFor="email">Email</label>
+                              <input type="email" name="email"
+                            //    placeholder="email"
+                              value={email}
+                              onChange={this.handleChange}/>
+
                              </div>
                              <div className="form-group">
-                              <label htmlFor="Password">Password</label>
-                              <input type="password" name="password" placeholder="password"/>
+                              <label htmlFor="password">Password</label>
+                              <input type="password" name="password"
+                                       value={password}
+                                       onChange={this.handleChange}/>
                              </div>
                            </div>
                          </div>
                          <div className="footer">
-                             <button type="button" className="btn">Login</button>
+                             <button onSubmit={this.handleSubmit}
+                             type="submit" value="submit" className="btn">Login</button>
+                            
+                              
                       </div>
                      </div>
 
            
             
-        )
+            )
+        }
     }
-}
 
 export default LoginForm;
 // only in class components props should never been 
