@@ -4,33 +4,54 @@ import './index.css';
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import LoginForm from './components/LoginForm'
-// import {Switch, Router} from 'react-router-dom'
+// import SignupForm from './components/SignupForm'
+import {Switch, Router} from 'react-router-dom'
 
 class App extends React.Component {
 
   state = {
-    username: {}
+    id:0,
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: ""
+    
 }
 
    handleSubmit =(userInfo) => {
-    // console.log(userInfo);
-    fetch("http://localhost:3000/user/login",{
+   
+    fetch("http://localhost:3000/users/login",{
       method: "POST",
       headers: {
         "Content-Type": "Application/json"
       },
-      body: JSON.stringify(userInfo)
+      body: JSON.stringify({
+        firstname: userInfo.firstname,
+        lastname: userInfo.lastname,
+        email: userInfo.email,
+        password: userInfo.password
+      })
     })
+        .then(res => res.json())
+        .then((resp) =>{
+          if(resp.error){
+            // console.error(resp)
+          }else {
+
+            this.setState(resp)
+
+            }
+          })
+
+        
    }
-
-
 
 
 componentDidMount(){
   fetch(`http://localhost:3000/users`)
   .then(res => res.json())
   .then(users =>{
-    console.log(this.state)
+    // console.log(this.state)
     this.setState({
       user: users[0]
     })
@@ -44,8 +65,9 @@ render (){
       <br></br>
       <h1 className="rainbow-text">Color me a Room</h1>
       <br></br>
-      <LoginForm  UserName="hortencia"/>
-      {/* <Router path="/loginForm" render={this.renderForm}/> */}
+      <LoginForm  handleSubmit={this.handleSubmit}/>
+      {/* <Router path="/LoginForm" render={this.renderForm}/> */}
+      {/* <Router path="/SignupForm" render={} */}
      
     </div>
   )
