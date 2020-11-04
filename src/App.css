@@ -25,7 +25,7 @@
 
 
 body{
-  background-color: rgb(235, 241, 244);
+  background-color: rgb(209, 234, 238);
 }
 .base-container{
   width:100%;
@@ -83,7 +83,7 @@ input {
   font-size: 14px;
   color: deeppink;
   font-family: 'Ubuntu', sans-serif;
-  background-color: rgb(188, 235, 238);
+  background-color: rgb(153, 245, 252);
   border: 0;
   border-radius: 4px;
   margin-bottom: 20px;
@@ -103,5 +103,33 @@ input {
   outline: 2px solid rgb(233, 87, 34);
 
 }
+.but{
+  font-size: 18px;
+  color:rgb(30, 136, 228);
+  font-weight: bold;
+  padding: 12px 15px;
+  outline: 2px solid rgb(34, 233, 114);
 
+}
 
+/* room css */
+
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color:rgb(122, 170, 233);
+  margin-left: 50px;
+}
+
+div.RoomCollection{
+  font-size: 20px;
+  font-weight: bold;
+  font-family:'Ubuntu', sans-serif;
+  color:rgb(242, 106, 199);
+  margin-left: 4rem;
+  margin-top: 2rem;
+
+}
+/* .container{
+  flex-flow: column wrap;
+}  */

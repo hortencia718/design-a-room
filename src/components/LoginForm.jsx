@@ -4,42 +4,67 @@ import ReactDOM from 'react-dom';
 export class LoginForm extends Component {
 
     state = {
-        firstname: "",
-        lastname: "",
+        // firstname: "",
+        // lastname: "",
         email: "",
         password: ""
       }
 
 
-      handleSubmit = (evt) => {
-          evt.preventDefault()
-          this.props.handleSubmit(this.state)
-           console.log(this.props.handleSubmit)
-      }
+      handleSubmit =(evt) => {
+        evt.preventDefault()
+        console.log(this.props.getUser)
+          fetch("http://localhost:3000/users/login",{
+            method: "POST",
+             headers: {
+              "Content-Type": "Application/json"
+            },
+            body: JSON.stringify({
+             
+              email: this.state.email,
+              password: this.state.password
+            })
+          })
+              .then(res => res.json())
+              .then((data) =>{
+                debugger
+      
+                this.props.getUser(data)
+            
+                // if(data.error){
+                //   this.setState({
+                //     error: data.error
+                //   })
+                // }else {
+      
+                //   this.setState({
+                //     user: data.user,
+                //     redirectUserProfile: true
+                //   })
+      
+                  })
+                }
+      
+    //   handleSubmit = (evt) => {
+    //       evt.preventDefault()
+    //       this.props.handleLogin(this.state)
+    //     //    console.log(this.state)
+    //   }
 
 
         // handle this change login email/password
      handleChange = (evt) => {
-        // let {firstname,lastname,email, password, value} = evt.target 
-        // console.log(firstname, lastname, email,password, value)
         this.setState({
             [evt.target.name]: evt.target.value
-            // [firstname]: value,
-            // [lastname]: value,
-            // [email]: value,
-            // [password]:value
-           
+            
         })
     }
-
-
-
 
 
     render() {
         let {formName} = this.props
         // let {firstname,lastname, email, password} = this.state
-        console.log(this.props)
+        // console.log(this.props)
 
 
             return (
@@ -47,10 +72,10 @@ export class LoginForm extends Component {
                      <h1>{formName}</h1>
                      <div className= "header">Login</div>
                     <div className="content">
-                   <div className="image">
+                   {/* <div className="image"> */}
                         {/* <img src={loginImg}/> */}
                     </div>
-                     <form className="form" onSubmit={this.handleSubmit} >
+                     <form className="form" onSubmit={this.handleSubmit}>
                     
                          {/* <div className="form-group">
                               <label htmlFor="Firstname">First name</label>
@@ -86,13 +111,16 @@ export class LoginForm extends Component {
                              <div className="footer">
                              <button 
                              type="submit"className="btn">Login</button>
+                             <br></br>
+                             <br></br>
+                             <button type="submit" className="but">Signup</button>
                             
                               
                       </div>
                            </form>
                          </div>     
                      
-                     </div>
+                    //  </div>
 
            
             
