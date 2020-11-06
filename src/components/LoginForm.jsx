@@ -14,7 +14,7 @@ export class LoginForm extends Component {
       handleSubmit =(evt) => {
         evt.preventDefault()
         console.log(this.props.getUser)
-          fetch("http://localhost:3000/users/login",{
+          fetch("http://localhost:3000/user/login",{
             method: "POST",
              headers: {
               "Content-Type": "Application/json"
@@ -27,7 +27,7 @@ export class LoginForm extends Component {
           })
               .then(res => res.json())
               .then((data) =>{
-                debugger
+                // debugger
       
                 this.props.getUser(data)
             

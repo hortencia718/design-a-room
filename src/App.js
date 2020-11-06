@@ -5,8 +5,12 @@ import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import LoginForm from './components/LoginForm'
 // import SignupForm from './components/SignupForm'
-import {BrowserRouter, Route, Redirect, Router, Switch } from 'react-router-dom'
+import {BrowserRouter, Route, Redirect, Router, Switch, Link } from 'react-router-dom'
 import UserProfile from './components/UserProfile'
+import {CirclePicker} from 'react-color';
+import RoomCollection from './components/RoomCollection';
+import CollectionShowPage from './components/CollectionShowPage';
+
 
 class App extends React.Component {
 
@@ -92,26 +96,26 @@ class App extends React.Component {
 
 
   render (){
-    if(this.state.redirectUserProfile){
-      return<Redirect to="userprofile"/>
-    }
+    // if(this.state.redirectUserProfile){
+    //   return<Redirect to="userprofile"/>
+    // }
 
 
 
-   console.log(this.state.user)
+   console.log(this.state.rooms)
   return(
     <div className="App">
       <br></br>
        <h1 className="rainbow-text">Color me a Room</h1>
         <br></br>
-
+        
 
         {/* container for routes and switch */}
           <main>
            {/* <LoginForm  handleSubmit={this.handleSubmit}/> */}
                     {/* <Router path="/SignupForm/:user_id" component={loginFrom} */}
                    {/* <Route path="/LoginForm" render={() => <UserProfile />} /> */}
-
+                   
                     <Switch>
 
                      <Route path="/login">
@@ -121,11 +125,18 @@ class App extends React.Component {
                       <Route path="/userprofile">
                       <UserProfile rooms={this.state.rooms} />
                      </Route>
-                     {/* <Route component={NotFound}/> create a not found component for this */ }
+                     <Route path ="/:id"
+                     render = {(routerProps) => <CollectionShowPage routerProps={routerProps}/>}/>
+                     <Route path = "/"
+                      render ={() => <RoomCollection/>}
+                     
+                     />
+                     
+                  
                    </Switch>   
           </main>
            
-
+                {/* create a link to link  */}
           
 
     

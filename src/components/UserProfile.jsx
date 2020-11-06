@@ -1,6 +1,5 @@
 import React from 'react'
-// import { NavLink } from 'react-router-dom'
-// import React, {Component}from 'react';
+import {Link} from 'react-router-dom'
 
 
 function UserProfile(props) {
@@ -9,13 +8,17 @@ function UserProfile(props) {
     }
 
     let roomArray= props.rooms.map((room) => {
+        console.log(room)
         return <div>
-            <li onClick={handleClick}>
-
+           <Link to={`/${room.id}`}>
+           
+           <li>
                 {room.name}
             </li>
+
+            </Link>
             <div className="RoomCollection">
-               
+            
             </div>
 
 
@@ -24,9 +27,12 @@ function UserProfile(props) {
     return (
         <div className= "Containter">
            <div className ="RoomCollection">
-               <br></br>
+            
                <h2> My Collection</h2>
+             
+               <br></br>
                {roomArray}
+             
                
                </div> 
             
