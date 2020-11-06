@@ -15,8 +15,11 @@ class CollectionShowPage extends Component {
         return (
             <div>
                 <h1>Kitchen</h1>
+                <div className="button"></div>
                 <br></br>
-                 <div className="flex-container">  
+                <button type="submit" className="butty">Create New</button>
+                <br></br>
+                 <div className="flex-container"> 
                  <br></br> 
                   <div className="flex-item colors">1</div>
                    <div className="flex-item colors">2</div>
