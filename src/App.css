@@ -25,7 +25,7 @@
 
 
 body{
-  background-color: rgb(209, 234, 238);
+  background-color: rgba(202, 228, 224, 0.708);
 }
 .base-container{
   width:100%;
@@ -54,19 +54,39 @@ body{
     height: 100%;
   /* } */
 /* } */ 
-
-.form {
-  margin-top: 2em;
-  display: flex;
-  color:rgb(78, 50, 205);
-  flex-direction: column;
-  align-items: center;
+/* login form button */
+div.footer{
+  align-right: ;
 }
 
-.form-group {
-  display: flex;
+.form-group label{
+  font-family:'Ubuntu';
+  font-size: 20px;
+  color:rgb(255, 0, 153);
+  font-weight: bold;
+}
+
+form.form {
+  margin-top: 2em;
+  display: block;
+  color:rgb(174, 50, 205);
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  position: relative;
+}
+/*  */
+.form-group:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top:-5px;
+  left:-5px;
+  right:-5px;
+  bottom: -5px;
+  z-index:1;
+  background-image: linear-gradient(to bottom right,orange,rgb(64, 165, 233));
+  flex-direction: column;
+  /* align-items: flex-start; */
   color: rgb(237, 107, 38);
   font-size: 18px;
   width: fit-content;
@@ -74,57 +94,56 @@ body{
     font-size: 18px;
   }
 }
-
+/* login input group */
 input {
   margin-top: 6px;
   min-width: 16em;
-  height: 30px;
+  height: 50px;
   padding: 0px 10px;
   font-size: 14px;
   color: deeppink;
+  font-weight:bold;
   font-family: 'Ubuntu', sans-serif;
-  background-color: rgb(153, 245, 252);
+  background-color: rgba(216, 221, 230, 0.824);
   border: 0;
-  border-radius: 4px;
+  border-radius: 14px;
   margin-bottom: 20px;
   transition: all 250ms ease-in-out;
-  &:focus{
+  /* &:focus{
     outline: none;
     box-shadow: 0px 0px 12px 0.8px #ffffff;
-  }
+  } */
   
 }
 
-.btn{
+/* login buttons */
+button.btn{
   font-size: 20px;
   color:rgb(228, 30, 205);
+  /* align-self: center; */
   font-weight: bold;
   padding: 12px 15px;
-  outline: 2px solid rgb(233, 87, 34);
+  outline: 2px solid rgb(226, 77, 23);
 
 }
-.but{
+button.but{
   font-size: 18px;
   color:rgb(30, 136, 228);
   font-weight: bold;
+  /* width:auto; */
+  float:left;
   padding: 12px 15px;
   outline: 2px solid rgb(34, 233, 114);
 
 }
 
-/* room css */
+/* form room */
 
-h1{
-  font-family: Ubuntu, Helvetica, sans-serif;
-  font-size: 40px;
-  color:rgb(215, 122, 233);
-  margin-left: 70px;
-}
 
 div.RoomCollection{
   font-size: 20px;
   font-weight: bold;
-  /* border:1px solid black; */
+  /* text-align: center; */
   font-family:'Ubuntu', sans-serif;
   color:rgb(235, 24, 168);
   margin-left: 4rem;
@@ -143,40 +162,142 @@ div.RoomCollection{
   margin: 0;
   list-style: none;
 }
-
-.flex-item{
-  background: rgba(220, 174, 146, 0.317);
+/* boxes my collection page */
+div.flex-item.colors{
+  background: rgba(240, 197, 174, 0.797);
   padding: 5px;
   width: 200px;
   height: 150px;
-  line-height: 150px;
-  color:rgb(11, 111, 106);
+  line-height: 100px;
+  color:rgb(202, 47, 50);
   font-weight: bold;
   font-size:3em;
   text-align:center;
 }
+
 .button{
   font-family: Ubuntu, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
-  color:rgb(26, 164, 70);
+  color:rgb(49, 216, 33);
   margin-left: 60px;
   padding: 1px 15px;
-  
 }
+ /* room collection font and button */
+
+/* input for create room */
+ div.form-group input{
+  font-family: Ubuntu, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color:rgb(72, 200, 247);
+  margin-left: 40px;
+  padding: 20px 15px;
+  /* border-radius: 3em; */
+  } 
+
+
+ h1{
+  font-family: Ubuntu, Helvetica, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color:rgb(186, 48, 240);
+  margin-left: 70px;
+}
+
 .butty{
   display:flex;
   font-family: Ubuntu;
   align-content: center;
   /* height:200px; */
   /* border: 3px; */
+  text-align: center;
   margin-left: 80px;
   font-weight: bold;
   color:rgb(0, 4, 255);
   padding: 12px 15px;
   outline: 2px solid rgb(233, 87, 34);
 }
+ 
+
+
+  h2{
+  font-family:Ubuntu; 
+  font-weight: bold;
+  color: rgb(207, 33, 85);
+  margin-left: 18em;
+  
+}  
 
 
 
 /* color picker */
+div.color-picker{
+  width:84%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:rgb(237, 62, 31);
+  font-size:16px;
+  margin-left: 8%;
+  border-radius:10px;
+  transition: background-color .3s;
+}
+/* color picker information not sure going to use */
+/* input {
+  width: 20%;
+  margin-left: calc(40% - 3px);
+  margin-bottom: 20px;
+  padding: 2px 3px;
+  border: none;
+  background: white;
+  box-shadow: 5px 5px 30px -5px rgba(112, 112, 112, 0.8);
+  transition: box-shadow .3s;
+} */
+
+input:hover{
+  cursor: pointer;
+  box-shadow: 5px 5px 30px;
+
+}
+
+input:focus{
+  outline: none;
+  align-content: center;
+  float:center;
+}
+
+div.container.fulid {
+  font-family: Ubuntu; 
+  text-align: center;
+  font-weight:bold;
+  font-size: 12px;
+}
+
+.keep{
+  font-family: Ubuntu;
+  font-size: 20px;
+  color:green;
+}
+/* button.add, button.trash{
+  font-family: Ubuntu;
+  color:rgb(140, 0, 255);
+  display:block;
+  padding: 12px 15px;
+  outline: 2px solid rgb(233, 87, 34);
+  margin: 0 auto;
+} */
+
+button.add{
+  font-family: Ubuntu;
+  outline: 2px solid rgb(233, 87, 34);
+  margin: 0 auto;
+  display: out-side;
+  padding: 12px 15px;
+  color: rgb(90, 27, 237);
+  font-weight: bold;
+}
+
+.removebtn{
+  color:rgb(0, 4, 255);
+  padding: 12px 15px;
+  outline: 2px solid rgb(233, 87, 34);
+}

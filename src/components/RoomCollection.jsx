@@ -59,25 +59,33 @@ class  RoomCollection extends React.Component {
         console.log(this.state)
     return (
         <div className="color-picker">
-            <h2>Pick a color</h2>
+            <h2>Pick a Color Create a  collection</h2>
+            <div className="Conatiner fulid">
+                
+
+            </div>
+          
+
             <input type="color" value="#ffffff"></input>
             
             <CirclePicker color={this.state.color_id} onChangeComplete={this.handleChangeComplete}/>
 
-            <div>
+            
                 <button onClick={this.handleSubmit}>Submit</button>
 
                 <section>
                     <div className="picked-color">
                         <ul></ul>
-
                     </div>
                 </section>
 
-                <div className="trash">Edit</div>
-                <div className="clear">Clear</div>
+                <div className="Container add collection button"> 
+                
                 <div className="keep">AddToCollection</div>
-
+                <button type="submit" className="trash">edit</button>
+                <br></br>
+                <button type="submit" className="add">Submit</button>
+                    
                 </div>
             </div>
     )

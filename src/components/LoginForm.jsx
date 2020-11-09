@@ -109,16 +109,14 @@ export class LoginForm extends Component {
                                        onChange={this.handleChange}/>
                              </div>
                              <div className="footer">
-                             <button 
-                             type="submit"className="btn">Login</button>
-                             <br></br>
-                             <br></br>
-                             <button type="submit" className="but">Signup</button>
-                            
-                              
-                      </div>
+                            <button 
+                                type="submit"className="btn">Login</button>
+                               <br></br>
+                                <br></br>
+                            <button type="submit" className="but">Signup</button> 
+                         </div>
                            </form>
-                         </div>     
+                            </div>     
                      
                     //  </div>
 

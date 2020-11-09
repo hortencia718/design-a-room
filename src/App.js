@@ -18,7 +18,8 @@ class App extends React.Component {
   user:[],
   error:"",
   redirectUserProfile: false,
-  rooms:[]
+  rooms:[],
+  colors:[]
   }
 
   //  handleLogin =(userInfo) => {
@@ -79,19 +80,43 @@ class App extends React.Component {
         })
       }
 
-
+      // this function below is getting all the room from the backend and setting the state
+      // to all the rooms which is an array 
 
       componentDidMount(){
         fetch(`http://localhost:3000/rooms`)
    .then(res => res.json())
-   .then(rooms =>{
+   .then(roomsArray =>{
      this.setState({
-       rooms: rooms
+       rooms: roomsArray,
+       name:""
      })
   })
-    }
+  //   fetch()
+    // }fetch to colors here !
+      }
 
+      // working on creating a room here fucntion will be sent to the form as prop
+      createNewRoom=(newroom)=>{
+        let copyOfRooms = [newroom,...this.state.rooms]
+        this.setState({
+          rooms: copyOfRooms
+        })
+        console.log(newroom, "in app")
+      }
 
+      // this is updating a room
+      // updateRoom=()=>{
+
+      // }
+
+        // deleting a
+      deleteroomFromState=(deletedRoom) =>{
+        let updatedArray= this.state.rooms.filter(room => room.id !== deletedRoom.id)
+        this.setState({
+          rooms:updatedArray
+        })
+      }
 
 
 
@@ -123,20 +148,20 @@ class App extends React.Component {
                        </Route>
 
                       <Route path="/userprofile">
-                      <UserProfile rooms={this.state.rooms} />
+                      <UserProfile rooms={this.state.rooms} createNewRoom={this.createNewRoom} deleteroomFromState={this.deleteroomFromState}/>
                      </Route>
                      <Route path ="/:id"
-                     render = {(routerProps) => <CollectionShowPage routerProps={routerProps}/>}/>
+                     render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
                      <Route path = "/"
                       render ={() => <RoomCollection/>}
-                     
+                   
                      />
                      
                   
                    </Switch>   
           </main>
            
-                {/* create a link to link  */}
+                {/* create a link to links  */}
           
 
     
