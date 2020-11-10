@@ -64,14 +64,16 @@ class  RoomCollection extends React.Component {
                 
 
             </div>
-          
+          <div style={{color:this.state.background}}>
+            hola sunshine
+          </div>
 
             <input type="color" value="#ffffff"></input>
             
             <CirclePicker color={this.state.color_id} onChangeComplete={this.handleChangeComplete}/>
 
             
-                <button onClick={this.handleSubmit}>Submit</button>
+                {/* <button onClick={this.handleSubmit}>Submit</button> */}
 
                 <section>
                     <div className="picked-color">
@@ -80,7 +82,7 @@ class  RoomCollection extends React.Component {
                 </section>
 
                 <div className="Container add collection button"> 
-                
+
                 <div className="keep">AddToCollection</div>
                 <button type="submit" className="trash">edit</button>
                 <br></br>

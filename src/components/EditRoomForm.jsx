@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
  class EditRoomForm extends Component {
 
- state={
+ state= {
      name:""
  }
 
@@ -24,14 +24,15 @@ import React, { Component } from 'react'
                     "content-type": "Application/json"
                 },
                 body: JSON.stringify({
-                    name: this.props.room.nameId
+                    name: this.state.name,
+                    user_id: this.props.room.user_id
 
                 })
 
             })
             .then(res => res.json())
             .then(updatedroom=>{
-                this.props.state.handleRoomname(updatedroom)
+                this.props.updatedRoomFromState(updatedroom)
             })
            
 
@@ -44,7 +45,7 @@ import React, { Component } from 'react'
             // handlechange for room edit
           <form onSubmit= {this.handleSubmit} >
            
-            <input type="text" name="room" value={this.state.name} onChange={this.handleRoomname}>
+            <input type="text" name="name" value={this.state.name} onChange={this.handleRoomname}>
 
                 </input> 
                

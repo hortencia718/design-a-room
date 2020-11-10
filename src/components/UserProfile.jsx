@@ -37,7 +37,7 @@ function UserProfile(props) {
             <button className="removebtn" onClick={()=> handleremovebtn(room)}>Remove </button>
             <button className="update-room-name " onClick={e=> setUpdate(prestate=>!prestate)}> update</button>
             {update ? 
-            <EditRoomForm room={room}/>
+            <EditRoomForm room={room} updatedRoomFromState={props.updatedRoomFromState}/>
              : null}
              
             <div className="RoomCollection">

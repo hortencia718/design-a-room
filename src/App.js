@@ -109,7 +109,8 @@ class App extends React.Component {
       }
 
       // this is updating a room
-      updateRoomFromState=(updatedRoom)=>{
+      updatedRoomFromState=(updatedRoom)=>{
+        // debugger
         let updatedArray= this.state.rooms.map((room)=>{
           if(room.id === updatedRoom.id){
             return updatedRoom
@@ -162,7 +163,7 @@ class App extends React.Component {
                       <Route path="/userprofile">
                       <UserProfile rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
                       deleteroomFromState={this.deleteroomFromState} 
-                      updateRoomFromState={this.updateRoomFromState}/>
+                     updatedRoomFromState={ this.updatedRoomFromState}/>
                      </Route>
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
@@ -170,7 +171,7 @@ class App extends React.Component {
                       render ={() => <RoomCollection/>}
                     // {this.updateRoomFromState}
                      />
-                     <EditRoomForm/>
+                     <EditRoomForm updatedRoomFromState={this.updatedRoomFromState}/>
                   
                    </Switch>   
           </main>
