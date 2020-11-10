@@ -62,13 +62,16 @@ class RoomForm extends Component {
             <button type="submit" className="but">Create Room</button>
             <br></br>
             <label htmlFor="Room-Name"></label>
-            <input type="room" name="room"
+            <input type="text" name="room"
                
                 value={this.state.room}
                 onChange={this.handleRoom}/>
 
             </div>
-            {/* <button type="submit" className="but">Create Room</button> */}
+            <div className="edit room name">
+            {/* <button type="submit" className="but">update</button> */}
+           
+            </div>
             </form>
         );
     }

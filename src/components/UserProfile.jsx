@@ -1,8 +1,11 @@
-import React,{ Component } from 'react'
+import React,{ Component, useState } from 'react'
 import {Link} from 'react-router-dom'
 import RoomForm from './RoomForm'
+import EditRoomForm from './EditRoomForm'
+
 
 function UserProfile(props) {
+    const [update, setUpdate] = useState(false)
    // handle delete here 
    let handleremovebtn =(room) =>{
     // console.log(room, "hello")
@@ -17,10 +20,14 @@ function UserProfile(props) {
         
     })
 }
+    const handleupdate= (evt) =>{
+        console.log("hello")
+    }
+
 
     console.log(props)
     let roomArray= props.rooms.map((room) => {
-        // console.log(room)
+        console.log(room)
         return <div>
            <Link to={`/${room.id}`}>
            <li>
@@ -28,6 +35,11 @@ function UserProfile(props) {
             </li>
             </Link>
             <button className="removebtn" onClick={()=> handleremovebtn(room)}>Remove </button>
+            <button className="update-room-name " onClick={e=> setUpdate(prestate=>!prestate)}> update</button>
+            {update ? 
+            <EditRoomForm room={room}/>
+             : null}
+             
             <div className="RoomCollection">
   
                 <br></br>

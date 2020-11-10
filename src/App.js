@@ -10,6 +10,9 @@ import UserProfile from './components/UserProfile'
 import {CirclePicker} from 'react-color';
 import RoomCollection from './components/RoomCollection';
 import CollectionShowPage from './components/CollectionShowPage';
+import EditRoomForm from './components/EditRoomForm';
+
+
 
 
 class App extends React.Component {
@@ -106,9 +109,18 @@ class App extends React.Component {
       }
 
       // this is updating a room
-      // updateRoom=()=>{
-
-      // }
+      updateRoomFromState=(updatedRoom)=>{
+        let updatedArray= this.state.rooms.map((room)=>{
+          if(room.id === updatedRoom.id){
+            return updatedRoom
+          }else{
+            return room
+          }
+        })
+        this.setState({
+          rooms:updatedArray
+        })
+      }
 
         // deleting a
       deleteroomFromState=(deletedRoom) =>{
@@ -148,15 +160,17 @@ class App extends React.Component {
                        </Route>
 
                       <Route path="/userprofile">
-                      <UserProfile rooms={this.state.rooms} createNewRoom={this.createNewRoom} deleteroomFromState={this.deleteroomFromState}/>
+                      <UserProfile rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
+                      deleteroomFromState={this.deleteroomFromState} 
+                      updateRoomFromState={this.updateRoomFromState}/>
                      </Route>
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
                      <Route path = "/"
                       render ={() => <RoomCollection/>}
-                   
+                    // {this.updateRoomFromState}
                      />
-                     
+                     <EditRoomForm/>
                   
                    </Switch>   
           </main>
