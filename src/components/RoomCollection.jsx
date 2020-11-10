@@ -60,12 +60,17 @@ class  RoomCollection extends React.Component {
     return (
         <div className="color-picker">
             <h2>Pick a Color Create a  collection</h2>
+            {/* <p className= "how it works"> 
+            how it works you select from the dropdown color picker for a color of your
+            choice .
+            then you place it  in your keep stack .
+            </p> */}
             <div className="Conatiner fulid">
                 
 
             </div>
           <div style={{color:this.state.background}}>
-            hola sunshine
+           hola friend 
           </div>
 
             <input type="color" value="#ffffff"></input>
@@ -83,7 +88,7 @@ class  RoomCollection extends React.Component {
 
                 <div className="Container add collection button"> 
 
-                <div className="keep">AddToCollection</div>
+                {/* <div className="keep">AddToCollection</div> */}
                 <button type="submit" className="trash">edit</button>
                 <br></br>
                 <button type="submit" className="add">Submit</button>

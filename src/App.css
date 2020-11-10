@@ -25,7 +25,7 @@
 
 
 body{
-  background-color: rgba(202, 228, 224, 0.708);
+  background-color: rgba(200, 210, 208, 0.708);
 }
 .base-container{
   width:100%;
@@ -35,7 +35,7 @@ body{
   outline-offset: 6px;
 }
 
-.header{
+div.header{
   font-size: 35px;
   font-weight: bold;
   color:rgb(255, 132, 0);
@@ -187,13 +187,13 @@ div.flex-item.colors{
 
 /* input for create room */
  div.form-group input{
-  font-family: Ubuntu, Helvetica, sans-serif;
-  font-size: 10px;
+  font-family: Ubuntu;
+  font-size: 16px;
   font-weight: bold;
-  color:rgb(72, 200, 247);
+  color:rgb(240, 9, 9);
   margin-left: 40px;
   padding: 20px 15px;
-  /* border-radius: 3em; */
+  border-radius: 3em;
   } 
 
 
@@ -220,17 +220,6 @@ div.flex-item.colors{
 }
  
 
-
-  h2{
-  font-family:Ubuntu; 
-  font-weight: bold;
-  color: rgb(207, 33, 85);
-  margin-left: 18em;
-  
-}  
-
-
-
 /* color picker */
 div.color-picker{
   width:84%;
@@ -242,16 +231,22 @@ div.color-picker{
   transition: background-color .3s;
 }
 /* color picker information not sure going to use */
-/* input {
+  div.color-picker input {
   width: 20%;
   margin-left: calc(40% - 3px);
   margin-bottom: 20px;
   padding: 2px 3px;
-  border: none;
-  background: white;
+  /* border: none; */
+  background: rgb(240, 149, 149);
   box-shadow: 5px 5px 30px -5px rgba(112, 112, 112, 0.8);
   transition: box-shadow .3s;
-} */
+} 
+
+div.color-picker h2{
+  font-family:Ubuntu; 
+  color: red;
+  margin:center;
+}
 
 input:hover{
   cursor: pointer;
@@ -272,19 +267,21 @@ div.container.fulid {
   font-size: 12px;
 }
 
-.keep{
+div.keep{
   font-family: Ubuntu;
   font-size: 20px;
   color:green;
+  text-align: center;
 }
-/* button.add, button.trash{
+ button.trash{
   font-family: Ubuntu;
   color:rgb(140, 0, 255);
   display:block;
+  float:right;
   padding: 12px 15px;
   outline: 2px solid rgb(233, 87, 34);
   margin: 0 auto;
-} */
+}
 
 button.add{
   font-family: Ubuntu;
