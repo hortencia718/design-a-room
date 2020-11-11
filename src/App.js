@@ -4,7 +4,6 @@ import './index.css';
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import LoginForm from './components/LoginForm'
-// import SignupForm from './components/SignupForm'
 import {BrowserRouter, Route, Switch, Link, withRouter } from 'react-router-dom'
 import UserProfile from './components/UserProfile'
 import {CirclePicker} from 'react-color';

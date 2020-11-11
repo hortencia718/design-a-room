@@ -24,10 +24,13 @@ export class SignupForm extends Component {
         return this.props.history.push("/login")
     }
 
+
+                        
     render() {
         return (
             <div>
-                 <form className="form" onSubmit={this.handleSubmit}>
+                  <h1>SignUp</h1>
+                 <form className="form-signup" onSubmit={this.handleSubmit}>
                      <div className="form-group">
                          <label htmlFor="Firstname">First name</label>
                          <input type="text" id="first name" 
@@ -64,7 +67,7 @@ export class SignupForm extends Component {
                            type="submit"className="btn" onClick={this.handleLogin}>Login</button>
                           <br></br>
                            <br></br>
-                        <button type="submit" className="but">Signup</button> 
+                        {/* <button type="submit" className="but">Signup</button>  */}
                     </div>
                       </form>
                         

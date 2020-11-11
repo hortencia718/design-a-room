@@ -139,6 +139,7 @@ button.but{
   font-size: 18px;
   color:rgb(30, 136, 228);
   font-weight: bold;
+  margin-top: 20px;
   /* width:auto; */
   float:left;
   padding: 12px 15px;
@@ -159,6 +160,21 @@ div.RoomCollection{
   margin-top: 2rem;
 
 }
+/* my collection button logout */
+
+ div.logoutbtn button{
+  font-family:Ubuntu; 
+  color: rgb(221, 255, 0);
+  font-weight:bold;
+  margin-left: 80px;
+  /* padding: 10px 15px; */
+  padding: 10px 15px;
+  outline: 2px solid rgb(233, 87, 34);
+  /* outline: 2px solid rgb(233, 87, 34); */
+
+} 
+
+
 /* .container{
   flex-flow: column wrap;
 }  */
@@ -201,9 +217,15 @@ div.flex-item.colors{
   font-weight: bold;
   color:rgb(240, 9, 9);
   margin-left: 40px;
+  /* margin-top: 2px; */
   padding: 20px 15px;
   border-radius: 3em;
   } 
+
+  div.RoomCollection input{
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
 
 
  h1{
@@ -262,13 +284,11 @@ div.circle-picker{
   
 }
  
-
-
 input:hover{
   cursor: pointer;
   box-shadow: 5px 5px 30px;
-
 }
+
 
 input:focus{
   outline: none;
@@ -322,7 +342,7 @@ button.removebtn{
 /* user profile li */
 div.RoomCollection li{
   font-family: Ubuntu;
-  color:rgb(206, 35, 240);
+  color:rgb(35, 42, 240);
   font-weight:bold;
 }
 
@@ -331,6 +351,7 @@ button.update-room-name{
   color:rgb(245, 11, 11);
   font-family:Ubuntu; 
   font-weight:bold;
+  margin-left: 14px;
   margin-top: 20px;
   padding: 10px 15px;
   outline: 2px solid rgb(233, 87, 34);
@@ -341,7 +362,9 @@ button.buddy{
   color:red;
   font-family:Ubuntu; 
   padding: 10px 15px;
-  outline: 2px solid rgb(34, 233, 124);
+  margin-left: 9px;
+  margin-top: 20px;
+  outline: 2px solid rgb(233, 114, 34);
 }
 
 .form input{
@@ -355,3 +378,33 @@ button.buddy{
 div.edit.room.name{
   font-family:Ubuntu; 
 }
+
+
+select.hex.colors{
+  margin-top: 20px;
+  border-radius: 4px;
+  padding: 10px 15px;
+  outline: 2px solid rgb(18, 14, 238);
+}
+
+/* form for signup */
+
+/* div.form-group label{
+  font-family: Ubuntu; 
+  margin-left: 280px;
+  
+} */
+/* 
+div.footer button.btn{
+  margin-left: 20em;
+  padding-top: 16px;
+} */
+
+
+/* .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  /* text-align: center; */
+  /* font-family: arial; */
+/* } */ 

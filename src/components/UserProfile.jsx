@@ -52,7 +52,9 @@ function UserProfile(props) {
                  <br></br> 
                   <div className="flex-item colors"></div>
                    <div className="flex-item colors"></div>
-                     {/* <div className="flex-item colors">3</div> */}
+                   {/* <div className="card-flex-item"></div> */}
+
+                     {/* { <div className="flex-item colors"></div> } */}
                      </div>
             </div>
  
@@ -61,7 +63,15 @@ function UserProfile(props) {
     console.log(props.token)
     return (
         <div className= "Containter">
-           
+
+            <div className="logoutbtn">
+                {props.token?
+                <button onClick={handleLogout}>Logout</button>
+                    :
+                    null
+                    }
+                </div>
+                
            <div className ="RoomCollection">
            
                <h1> My Collection</h1>
@@ -69,12 +79,13 @@ function UserProfile(props) {
                {/* <button type="submit" className="delete">X</button> */}
               <RoomForm createNewRoom={props.createNewRoom} />
                 
+                {/* <div className="logoutbtn">
                 {props.token?
                 <button onClick={handleLogout}>Logout</button>
                     :
                     null
                     }
-             
+                </div> */}
                <br></br>
                {roomArray}
              
