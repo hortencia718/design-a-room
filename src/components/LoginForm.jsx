@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
+import {withRouter} from 'react-router-dom';
 
 export class LoginForm extends Component {
 
@@ -14,7 +14,7 @@ export class LoginForm extends Component {
       handleSubmit =(evt) => {
         evt.preventDefault()
         console.log(this.props.getUser)
-          fetch("http://localhost:3000/user/login",{
+          fetch("http://localhost:3000/users/login",{
             method: "POST",
              headers: {
               "Content-Type": "Application/json"
@@ -44,11 +44,11 @@ export class LoginForm extends Component {
       
                   })
                 }
-      
+    //   handle login submit
     //   handleSubmit = (evt) => {
     //       evt.preventDefault()
     //       this.props.handleLogin(this.state)
-    //     //    console.log(this.state)
+    //        console.log(this.state)
     //   }
 
 
@@ -60,11 +60,14 @@ export class LoginForm extends Component {
         })
     }
 
+    handleSignUp=()=>{
+      return this.props.history.push('/signup')
+    }
 
     render() {
         let {formName} = this.props
         // let {firstname,lastname, email, password} = this.state
-        // console.log(this.props)
+        console.log(this.props)
 
 
             return (
@@ -77,21 +80,6 @@ export class LoginForm extends Component {
                     </div>
                      <form className="form" onSubmit={this.handleSubmit}>
                     
-                         {/* <div className="form-group">
-                              <label htmlFor="Firstname">First name</label>
-                              <input type="text" id="first name" 
-                              name="firstname"
-                               value={this.state.firstname}
-                              onChange={this.handleChange}/> 
-                             </div> */}
-
-                             {/* <div className="form-group">
-                              <label htmlFor="Lastname">Last name</label>
-                              <input type="text" id="last name" 
-                              name="lastname"
-                              value={this.state.lastname}
-                              onChange={this.handleChange}/> 
-                             </div> */}
 
                              <div className="form-group">
 
@@ -113,7 +101,7 @@ export class LoginForm extends Component {
                                 type="submit"className="btn">Login</button>
                                <br></br>
                                 <br></br>
-                            <button type="submit" className="but">Signup</button> 
+                             <button type="submit" onClick={this.handleSignUp} className="but">Signup</button> 
                          </div>
                            </form>
                             </div>     
@@ -126,7 +114,7 @@ export class LoginForm extends Component {
         }
     }
 
-export default LoginForm;
+export default withRouter(LoginForm);
 // only in class components props should never been 
 // written w/o "this.props ""
 // should be capitalized

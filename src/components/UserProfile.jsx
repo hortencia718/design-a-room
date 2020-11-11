@@ -2,6 +2,7 @@ import React,{ Component, useState } from 'react'
 import {Link} from 'react-router-dom'
 import RoomForm from './RoomForm'
 import EditRoomForm from './EditRoomForm'
+import AddCollectionColor from './AddCollectionColor'
 
 
 function UserProfile(props) {
@@ -24,8 +25,10 @@ function UserProfile(props) {
         console.log("hello")
     }
 
-
-    console.log(props)
+    let handleLogout= ()=>{
+        props.logout()
+    }
+    
     let roomArray= props.rooms.map((room) => {
         console.log(room)
         return <div>
@@ -39,7 +42,7 @@ function UserProfile(props) {
             {update ? 
             <EditRoomForm room={room} updatedRoomFromState={props.updatedRoomFromState}/>
              : null}
-             
+             <AddCollectionColor colors={props.colors}/>
             <div className="RoomCollection">
   
                 <br></br>
@@ -55,7 +58,7 @@ function UserProfile(props) {
  
         </div>
     })
-
+    console.log(props.token)
     return (
         <div className= "Containter">
            
@@ -66,7 +69,11 @@ function UserProfile(props) {
                {/* <button type="submit" className="delete">X</button> */}
               <RoomForm createNewRoom={props.createNewRoom} />
                 
-                
+                {props.token?
+                <button onClick={handleLogout}>Logout</button>
+                    :
+                    null
+                    }
              
                <br></br>
                {roomArray}

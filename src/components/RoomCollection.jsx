@@ -89,9 +89,9 @@ class  RoomCollection extends React.Component {
                 <div className="Container add collection button"> 
 
                 {/* <div className="keep">AddToCollection</div> */}
-                <button type="submit" className="trash">edit</button>
+                {/* <button type="submit" className="trash">save to</button> */}
                 <br></br>
-                <button type="submit" className="add">Submit</button>
+                <button type="submit" className="add">Save to</button>
                     
                 </div>
             </div>

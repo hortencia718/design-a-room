@@ -25,18 +25,27 @@
 
 
 body{
-  background-color: rgba(200, 210, 208, 0.708);
+  /* background-color: rgba(200, 210, 208, 0.708); */
+  background-image: url(./images/04.png);
 }
+
+/* container for login with fram */
 .base-container{
-  width:100%;
+  width:600px;
+  height: 460px;
   display:flex;
   flex-direction: column;
   align-items: center;
   outline-offset: 6px;
+  border-radius: 8px;
+  border: 10px solid rgb(143, 235, 57);
+  margin: auto;
+  padding: 15px 10px;
 }
 
+
 div.header{
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bold;
   color:rgb(255, 132, 0);
   font-family: 'Ubuntu', sans-serif;
@@ -164,7 +173,7 @@ div.RoomCollection{
 }
 /* boxes my collection page */
 div.flex-item.colors{
-  background: rgba(193, 220, 131, 0.797);
+  background: rgba(245, 244, 244, 0.797);
   padding: 5px;
   width: 200px;
   height: 150px;
@@ -201,7 +210,7 @@ div.flex-item.colors{
   font-family: Ubuntu, Helvetica, sans-serif;
   font-size: 40px;
   text-align: center;
-  color:rgb(186, 48, 240);
+  color:rgb(230, 240, 48);
   margin-left: 70px;
 }
 
@@ -233,7 +242,7 @@ div.color-picker{
 /* color picker information not sure going to use */
   div.color-picker input {
   width: 20%;
-  margin-left: calc(40% - 3px);
+  margin-left: calc(45% - 4px);
   margin-bottom: 20px;
   padding: 2px 3px;
   /* border: none; */
@@ -244,9 +253,16 @@ div.color-picker{
 
 div.color-picker h2{
   font-family:Ubuntu; 
-  color: red;
+  color: rgb(89, 250, 57);
   margin:center;
 }
+
+div.circle-picker{
+  margin-left: calc(14% - 4px);
+  
+}
+ 
+
 
 input:hover{
   cursor: pointer;

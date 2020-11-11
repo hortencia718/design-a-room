@@ -5,12 +5,13 @@ import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import LoginForm from './components/LoginForm'
 // import SignupForm from './components/SignupForm'
-import {BrowserRouter, Route, Redirect, Router, Switch, Link } from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Link, withRouter } from 'react-router-dom'
 import UserProfile from './components/UserProfile'
 import {CirclePicker} from 'react-color';
 import RoomCollection from './components/RoomCollection';
 import CollectionShowPage from './components/CollectionShowPage';
 import EditRoomForm from './components/EditRoomForm';
+import SignupForm from './components/SignupForm';
 
 
 
@@ -19,8 +20,8 @@ class App extends React.Component {
 
   state = {
   user:[],
+  token:"",
   error:"",
-  redirectUserProfile: false,
   rooms:[],
   colors:[]
   }
@@ -77,10 +78,12 @@ class App extends React.Component {
 
 
       getUser=(user)=>{
+        console.log("get user", user)
         this.setState({
-          user: user,
-          redirectUserProfile: true
+          user: user.user,
+          token: user.token,
         })
+        this.props.history.push('/UserProfile')
       }
 
       // this function below is getting all the room from the backend and setting the state
@@ -88,16 +91,27 @@ class App extends React.Component {
 
       componentDidMount(){
         fetch(`http://localhost:3000/rooms`)
-   .then(res => res.json())
-   .then(roomsArray =>{
-     this.setState({
-       rooms: roomsArray,
-       name:""
-     })
+        .then(res => res.json())
+        .then(roomsArray =>{
+          this.setState({
+            rooms: roomsArray,
+            name:""
+          })
   })
-  //   fetch()
-    // }fetch to colors here !
-      }
+
+
+     fetch(`http://localhost:3000/colors`)
+     .then(res => res.json())
+     .then(colorArray =>{
+       this.setState({
+         colors: colorArray,
+
+       })
+     })
+      
+
+
+       }
 
       // working on creating a room here fucntion will be sent to the form as prop
       createNewRoom=(newroom)=>{
@@ -131,16 +145,28 @@ class App extends React.Component {
         })
       }
 
+    renderLogin=()=>{
+      return <LoginForm getUser={this.getUser}/>
+    }
 
+  renderSignup=()=>{
+    return <SignupForm />
+  }
 
-  render (){
-    // if(this.state.redirectUserProfile){
-    //   return<Redirect to="userprofile"/>
-    // }
+  logout=()=>{
+    this.setState({
+      user:[],
+      token:"",
+      error:"",
+      rooms:[],
+      colors:[]
+    })
+    this.props.history.push('/login')
+  }
 
+  render(){
 
-
-   console.log(this.state.rooms)
+  //  console.log(this.state.rooms)
   return(
     <div className="App">
       <br></br>
@@ -156,23 +182,22 @@ class App extends React.Component {
                    
                     <Switch>
 
-                     <Route path="/login">
-                        <LoginForm getUser={this.getUser}/> 
-                       </Route>
-
+                     <Route path="/login" render={this.renderLogin}/>
+                     <Route path="/signup" render={this.renderSignup}/>
                       <Route path="/userprofile">
-                      <UserProfile rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
+                      <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
                       deleteroomFromState={this.deleteroomFromState} 
-                     updatedRoomFromState={ this.updatedRoomFromState}/>
+                     updatedRoomFromState={ this.updatedRoomFromState} colors={this.state.colors}/>
                      </Route>
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
                      <Route path = "/"
                       render ={() => <RoomCollection/>}
+                      
                     // {this.updateRoomFromState}
                      />
-                     <EditRoomForm updatedRoomFromState={this.updatedRoomFromState}/>
-                  
+                     {/* <EditRoomForm updatedRoomFromState={this.updatedRoomFromState}/> */}
+                    
                    </Switch>   
           </main>
            
@@ -193,4 +218,4 @@ class App extends React.Component {
  }
 }
 
-export default App
+export default withRouter(App)
