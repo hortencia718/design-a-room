@@ -59,7 +59,7 @@ class  RoomCollection extends React.Component {
         console.log(this.state)
     return (
         <div className="color-picker">
-            <h2>Pick a Color Create a  collection</h2>
+            <h2>Pick a Color</h2>
             {/* <p className= "how it works"> 
             how it works you select from the dropdown color picker for a color of your
             choice .
@@ -70,7 +70,7 @@ class  RoomCollection extends React.Component {
 
             </div>
           <div style={{color:this.state.background}}>
-           hola friend 
+           
           </div>
 
             <input type="color" value="#ffffff"></input>
@@ -80,12 +80,12 @@ class  RoomCollection extends React.Component {
             
                 {/* <button onClick={this.handleSubmit}>Submit</button> */}
 
-                <section>
-                    <div className="picked-color">
-                        <ul></ul>
-                    </div>
-                </section>
-
+               
+                    <section>
+                        <div class="picked-color">
+                            <ul></ul>
+                        </div>
+                    </section>
                 <div className="Container add collection button"> 
 
                 {/* <div className="keep">AddToCollection</div> */}

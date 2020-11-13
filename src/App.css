@@ -13,15 +13,9 @@
 
 .rainbow-text{
   font-family: 'Ubuntu', sans-serif;
-  /* padding-bottom: 0px; */
+  
 }
 
-/* p {
-  text-align: center;
-  font-size: 45px;
-  color:rgb(237, 217, 65);
-  font-weight: bold;
-} */
 
 
 body{
@@ -163,15 +157,15 @@ div.RoomCollection{
 /* my collection button logout */
 
  div.logoutbtn button{
+  color:rgb(245, 11, 11);
   font-family:Ubuntu; 
-  color: rgb(221, 255, 0);
+  width: fit-content;
   font-weight:bold;
-  margin-left: 80px;
-  /* padding: 10px 15px; */
+  margin-left:4rem ;
+  margin-top: 20px;
   padding: 10px 15px;
   outline: 2px solid rgb(233, 87, 34);
-  /* outline: 2px solid rgb(233, 87, 34); */
-
+  
 } 
 
 
@@ -380,7 +374,7 @@ div.edit.room.name{
 }
 
 
-select.hex.colors{
+select.hex-colors{
   margin-top: 20px;
   border-radius: 4px;
   padding: 10px 15px;
@@ -407,4 +401,47 @@ div.footer button.btn{
   margin: auto;
   /* text-align: center; */
   /* font-family: arial; */
+ /* }  */ 
+
+ /* div.card {
+  text-align: center;
+  border: rgba(179, 180, 244, 0.79) solid 4px;
+  padding: 1rem;
+  width: 11rem;
+  height: 20rem;
+  display: inline-flexbox;
+  margin: 2rem 2rem;
+  /* box-shadow: 3px 4px #daed32 */
+  /* }  */ 
+
+
+div.chicken{
+  height: 2rem;
+  width: 30rem;
+  margin-left: 20rem;
+  margin-bottom: auto;
+}
+
+/* for hex color list */
+/* ul{
+  width: 50%;
+  margin-left: 25%;
+  padding: 0;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
+/* } */
+
+
+
+/* li {
+  width: 51%;
+  min-width: 120px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 2;
 /* } */ 

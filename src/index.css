@@ -15,7 +15,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   /* padding-bottom: 2px; */
    text-align: center;
-   font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
     background-image: linear-gradient(to left, rgb(225, 49, 225), rgb(242, 179, 42), rgb(236, 244, 136), rgb(93, 225, 159), rgb(233, 36, 89), rgb(242, 95, 42), rgb(236, 55, 221));
     -webkit-background-clip: text;

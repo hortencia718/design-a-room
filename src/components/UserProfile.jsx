@@ -30,7 +30,7 @@ function UserProfile(props) {
     }
     
     let roomArray= props.rooms.map((room) => {
-        console.log(room)
+        // console.log(room)
         return <div>
            <Link to={`/${room.id}`}>
            <li>
@@ -42,36 +42,46 @@ function UserProfile(props) {
             {update ? 
             <EditRoomForm room={room} updatedRoomFromState={props.updatedRoomFromState}/>
              : null}
-             <AddCollectionColor colors={props.colors}/>
+             <AddCollectionColor colors={props.colors}ChangeSelectedColor={props.ChangeSelectedColor}room={room}/>
+
             <div className="RoomCollection">
+                {room.collections.map((collection) =>{
+                    // console.log(collection)
+                    return <div className ="chicken"style={{backgroundColor: collection.color.hex_number}}></div>
+                })}
   
                 <br></br>
-            {/* boxes go here  */}
-            <div className="flex-container"> 
-            
-                 <br></br> 
-                  <div className="flex-item colors"></div>
-                   <div className="flex-item colors"></div>
-                   {/* <div className="card-flex-item"></div> */}
 
+
+            {/* boxes go here  */}
+
+                 {/* <div className="flex-container">  */}
+                 <br></br> 
+                 <div className="card">
+                  <div className="flex-card-container"></div>
+                  <div className="card">
+                   <div className="flex-card-container"></div> 
+                  
+                      </div>
+                         </div>
                      {/* { <div className="flex-item colors"></div> } */}
                      </div>
             </div>
  
-        </div>
+        // </div>
     })
     console.log(props.token)
     return (
         <div className= "Containter">
-
+               
             <div className="logoutbtn">
-                {props.token?
+                {/* {props.token? */}
                 <button onClick={handleLogout}>Logout</button>
-                    :
-                    null
-                    }
+                    {/* : */}
+                    {/* null */}
+                    {/* } */}
                 </div>
-                
+
            <div className ="RoomCollection">
            
                <h1> My Collection</h1>
@@ -90,21 +100,6 @@ function UserProfile(props) {
                {roomArray}
              
             </div>
-
-
-             
-                    
-                {/* {/* <div className="button"></div> */}
-               
-                {/* <button type="submit" className="butty">submit</button> */} 
-                
-                 {/* <div className="flex-container"> 
-                 <br></br> 
-                  <div className="flex-item colors">1</div>
-                   <div className="flex-item colors">2</div>
-                     <div className="flex-item colors">3</div>
-                     </div> */}
-            
         </div>
     )
 }

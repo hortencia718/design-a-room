@@ -108,9 +108,59 @@ class App extends React.Component {
        })
      })
       
-
-
        }
+        // this function will send a post request to the collection
+        // updated color from state hex color
+
+        ChangeSelectedColor=(color_id,room) =>{
+          // console.log(this.data.data)
+          fetch(`http://localhost:3000/collections`,{
+            method: "POST",
+            headers: {
+              "content-type": "application/JSON",
+            },
+            body: JSON.stringify({
+              room_id: room.id,
+              color_id: color_id
+            })
+            
+          })
+
+           .then(resp => resp.json())
+           .then(data =>{
+            //  console.log("this is data", data)
+             let foundRoom= this.state.rooms.find(
+               individualRoom=> room.id === individualRoom.id)
+           
+              //  console.log(foundRoom)
+            let copyOfCollection = [...foundRoom.collections, data]
+
+
+              let copyOfRoom = {
+                ...foundRoom,
+                collections: copyOfCollection
+              }
+
+              // console.log("copy of Room", copyOfRoom.id)
+             
+            let copyOfRooms= this.state.rooms.map((room) => {
+                    if(room.id === copyOfRoom.id){
+                          return copyOfRoom
+                      } else {
+                          return room
+                        }
+                    })
+                  this.setState({
+                  rooms: copyOfRooms
+                  })
+        
+                  // console.log("copy of rooms", copyOfRooms)
+          })
+
+         
+        }
+
+
 
       // working on creating a room here fucntion will be sent to the form as prop
       createNewRoom=(newroom)=>{
@@ -118,7 +168,7 @@ class App extends React.Component {
         this.setState({
           rooms: copyOfRooms
         })
-        console.log(newroom, "in app")
+        // console.log(newroom, "in app")
       }
 
       // this is updating a room
@@ -165,7 +215,7 @@ class App extends React.Component {
 
   render(){
 
-  //  console.log(this.state.rooms)
+   console.log("this is state", this.state)
   return(
     <div className="App">
       <br></br>
@@ -185,7 +235,7 @@ class App extends React.Component {
                      <Route path="/signup" render={this.renderSignup}/>
                       <Route path="/userprofile">
                       <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
-                      deleteroomFromState={this.deleteroomFromState} 
+                      deleteroomFromState={this.deleteroomFromState} ChangeSelectedColor={this.ChangeSelectedColor}
                      updatedRoomFromState={ this.updatedRoomFromState} colors={this.state.colors}/>
                      </Route>
                      <Route path ="/:id"

@@ -70,8 +70,16 @@ export class SignupForm extends Component {
                         {/* <button type="submit" className="but">Signup</button>  */}
                     </div>
                       </form>
-                        
+
+                      <div className="color-card">
+                            {/* <h2>color</h2> */}
+                      </div>
+
             </div>
+
+                
+
+
         )
     }
 }

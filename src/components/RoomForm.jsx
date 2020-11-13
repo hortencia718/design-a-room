@@ -21,7 +21,9 @@ class RoomForm extends Component {
         fetch(`http://localhost:3000/rooms`,{
             method: "POST",
             headers: {
-                "Content-Type": "Application/json"
+                
+                "Content-Type": "Application/json",
+                
             },
             body: JSON.stringify({
               name: this.state.name, 
