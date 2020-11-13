@@ -10,6 +10,39 @@
  
 /* } */
 
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #317d40, #20f1e3,rgb(245, 53, 245), #4516b1, #2ef01d);
+    background-size: 600% 600%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .rainbow-text{
   font-family: 'Ubuntu', sans-serif;
@@ -17,11 +50,11 @@
 }
 
 
-
+/* 
 body{
   /* background-color: rgba(200, 210, 208, 0.708); */
-  background-image: url(./images/04.png);
-}
+  /* background-image: url(./images/04.png); */
+/* } */
 
 /* container for login with fram */
 .base-container{
@@ -416,10 +449,13 @@ div.footer button.btn{
 
 
 div.chicken{
-  height: 2rem;
-  width: 30rem;
-  margin-left: 20rem;
+  height: 4rem;
+  width: 40rem;
+  margin-left: 25%;
   margin-bottom: auto;
+  border-radius: 1rem;
+  padding-left: 1rem;
+   outline: 1px  rgb(214, 214, 216);  
 }
 
 /* for hex color list */
@@ -445,3 +481,18 @@ div.chicken{
   display: inline-block;
   z-index: 2;
 /* } */ 
+
+/* signup */
+
+div.form-groupA label{
+  font-family:Ubuntu; 
+  font-weight: bold;
+  font-size: 26px;
+  color:rgb(133, 236, 63);
+  margin-left: 9rem;
+  /* margin-inline: center; */
+}
+
+div.form{
+  margin-left: 8rem;
+}

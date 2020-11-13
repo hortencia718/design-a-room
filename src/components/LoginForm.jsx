@@ -74,12 +74,13 @@ export class LoginForm extends Component {
                 <div className ="base-container">
                      <h1>{formName}</h1>
                      <div className= "header">Login</div>
-                    <div className="content">
-                   {/* <div className="image"> */}
-                        {/* <img src={loginImg}/> */}
-                    </div>
+                                    
                      <form className="form" onSubmit={this.handleSubmit}>
-                    
+                            <div className="card"></div>
+                              {/* <div classname="img">
+                              <img src="/images/avatar2/large/elyse.png">
+                              
+                             </div> */}
 
                              <div className="form-group">
 
