@@ -76,14 +76,14 @@ class App extends React.Component {
 // }
 
 
-      getUser=(user)=>{
-        console.log("get user", user)
-        this.setState({
-          user: user.user,
-          token: user.token,
-        })
-        this.props.history.push('/UserProfile')
-      }
+      // getUser=(user)=>{
+      //   console.log("get user", user)
+      //   this.setState({
+      //     user: user.user,
+      //     token: user.token,
+      //   })
+      //   this.props.history.push('/UserProfile')
+      // }
 
       // this function below is getting all the room from the backend and setting the state
       // to all the rooms which is an array 
@@ -142,7 +142,7 @@ class App extends React.Component {
               }
 
               // console.log("copy of Room", copyOfRoom.id)
-             
+            //  this.updatedRoomFromState(copyOfCollection)
             let copyOfRooms= this.state.rooms.map((room) => {
                     if(room.id === copyOfRoom.id){
                           return copyOfRoom
@@ -154,7 +154,7 @@ class App extends React.Component {
                   rooms: copyOfRooms
                   })
         
-                  // console.log("copy of rooms", copyOfRooms)
+                  console.log("copy of rooms", copyOfRooms)
           })
 
          

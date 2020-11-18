@@ -6,7 +6,7 @@ class RoomForm extends Component {
         name:""
     }
 
-    // handles the name and target w/value
+    // handles the name and target w/value setting the name and its new value 
     handleRoom=(evt)=> {
      // debugger
         // console.log(evt.target.value)
@@ -15,7 +15,7 @@ class RoomForm extends Component {
         })
     }
 
-    // make a post request to rooms to get the user #6
+    // make a post request to rooms to get the user #6 which is me
     handleSubmit=(evt)=>{
         evt.preventDefault()
         fetch(`http://localhost:3000/rooms`,{
@@ -34,17 +34,10 @@ class RoomForm extends Component {
         .then(newroom => {
             this.props.createNewRoom(newroom)
             // console.log(newroom)
-           
         }
 
         )
-
     }
-
-       
-
-    
-    
 
 
     render() {
@@ -56,15 +49,13 @@ class RoomForm extends Component {
             {/* <label htmlFor="Room-Name"></label> */}
 
             <br></br>
+        
+            <br></br>
            
-            <br></br>
-            {/* <input type="onsubmit" className="remove"></input> */}
-            <br></br>
-            {/* <button className="delButton"> x</button> */}
             <button type="submit" className="but">Create Room</button>
             <br></br>
             <label htmlFor="Room-Name"></label>
-            <input type="text" name="room"
+            <input type="text" classname="room"
                
                 value={this.state.room}
                 onChange={this.handleRoom}/>
@@ -78,5 +69,7 @@ class RoomForm extends Component {
         );
     }
 }
+
+            
 
 export default RoomForm;

@@ -31,23 +31,23 @@ export class SignupForm extends Component {
             <div>
                   <h1>SignUp</h1>
                  <form className="form-signup" onSubmit={this.handleSubmit}>
-                     <div className="form-groupA">
+                     <div className="form-sign-group">
                          <label htmlFor="Firstname">First name</label>
                          <input type="text" id="first name" 
-                         name="firstname"
+                         classname="firstname"
                           value={this.state.firstname}
                          onChange={this.handleChange}/> 
                         </div> 
 
-                      <div className="form-groupB">
+                      <div className="form-group">
                          <label htmlFor="Lastname">Last name</label>
                          <input type="text" id="last name" 
-                         name="lastname"
+                        classname="lastname"
                          value={this.state.lastname}
                          onChange={this.handleChange}/> 
                         </div> 
 
-                        <div className="form-groupC">
+                        <div className="form-group">
 
                          <label htmlFor="email">Email</label>
                          <input type="email" name="email"
@@ -56,15 +56,15 @@ export class SignupForm extends Component {
                          onChange={this.handleChange}/>
 
                         </div>
-                        <div className="form-groupC">
-                         <label htmlFor="password">Password</label>
-                         <input type="password" name="password"
+                        <div className="form-group">
+                         <label className="password">Password</label>
+                         <input type="password" className="password"
                                    value={this.state.password}
                                   onChange={this.handleChange}/>
                         </div>
                         <div className="footer">
                        <button 
-                           type="submit"className="btn" onClick={this.handleLogin}>Login</button>
+                           type="submit"className="btnSU" onClick={this.handleLogin}>Login</button>
                           <br></br>
                            <br></br>
                         {/* <button type="submit" className="but">Signup</button>  */}

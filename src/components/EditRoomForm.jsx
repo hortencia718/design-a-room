@@ -51,7 +51,7 @@ import React, { Component } from 'react'
                
               
             <button type="submit" className="buddy">
-              update
+              change name 
             </button>
             </form>
            

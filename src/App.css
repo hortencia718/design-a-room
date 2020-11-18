@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(-45deg, #317d40, #20f1e3,rgb(245, 53, 245), #4516b1, #2ef01d);
+    background: linear-gradient(-45deg, #95c6ad, #84f7ee,rgb(248, 100, 248), #f45430, #f3524f);
     background-size: 600% 600%;
     animation: gradient 15s ease infinite;
 }
@@ -59,7 +59,7 @@ body{
 /* container for login with fram */
 .base-container{
   width:600px;
-  height: 460px;
+  height: 480px;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +72,9 @@ body{
 
 
 div.header{
-  font-size: 45px;
+  font-size: 55px;
+  margin-bottom: 4rem;
+  /* margin-top: 2rem; */
   font-weight: bold;
   color:rgb(255, 132, 0);
   font-family: 'Ubuntu', sans-serif;
@@ -83,23 +85,18 @@ div.header{
   flex-direction: column;
 }
 
-/* .image {
-  width: 21em;
-  img{
-    width: 100%;
-    height: 100%;
-  /* } */
-/* } */ 
+
 /* login form button */
-div.footer{
-  align-right: ;
-}
+/* div.footer{
+  align-right: 0;
+/* } */
 
 .form-group label{
   font-family:'Ubuntu';
   font-size: 20px;
   color:rgb(255, 0, 153);
   font-weight: bold;
+  
 }
 
 form.form {
@@ -111,7 +108,7 @@ form.form {
   position: relative;
 }
 /*  */
-.form-group:after {
+/* .form-group:after {
   content: '';
   display: block;
   position: absolute;
@@ -123,56 +120,79 @@ form.form {
   background-image: linear-gradient(to bottom right,orange,rgb(64, 165, 233));
   flex-direction: column;
   /* align-items: flex-start; */
-  color: rgb(237, 107, 38);
-  font-size: 18px;
-  width: fit-content;
-  label {
-    font-size: 18px;
-  }
-}
-/* login input group */
-input {
-  margin-top: 6px;
-  min-width: 16em;
+  /* color: rgb(237, 107, 38); */
+  /* font-size: 18px; */
+  /* width: fit-content; */
+  /* label { */
+    /* font-size: 18px; */
+  /* }} */
+
+  
+ /* login input group  */
+ div.form-group input { 
+   margin-top: 9px; 
+   margin-left:4px;
+  min-width: 14em;
   height: 50px;
-  padding: 0px 10px;
+  padding: 10px;
   font-size: 14px;
   color: deeppink;
   font-weight:bold;
   font-family: 'Ubuntu', sans-serif;
   background-color: rgba(216, 221, 230, 0.824);
   border: 0;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  transition: all 250ms ease-in-out;
-  /* &:focus{
+  border-radius: 10px;
+ }
+
+
+  /* button.button-btn{
+   margin-bottom: 20px;
+   margin-left: 20px;
+   margin-top: 10px;  
+   transition: all 250ms ease-in-out; 
+   &:focus{
     outline: none;
     box-shadow: 0px 0px 12px 0.8px #ffffff;
-  } */
+   }
+  /* }  */ 
   
-}
+  
 
-/* login buttons */
-button.btn{
-  font-size: 20px;
-  color:rgb(228, 30, 205);
-  /* align-self: center; */
-  font-weight: bold;
-  padding: 12px 15px;
-  outline: 2px solid rgb(226, 77, 23);
+/* login button only */
+  button.btn{
+   font-size: 20px;
+   color:rgb(228, 30, 205);
+   margin-top: 2rem;
+   margin-left: 0; 
+   /* margin-bottom: 4px; */
+   font-weight: bold;
+   position: relative;
+   padding: 10px 15px; 
+   outline: 2px solid rgb(226, 77, 23);
 
-}
-button.but{
-  font-size: 18px;
-  color:rgb(30, 136, 228);
-  font-weight: bold;
-  margin-top: 20px;
-  /* width:auto; */
-  float:left;
-  padding: 12px 15px;
-  outline: 2px solid rgb(34, 233, 114);
+ }  
 
-}
+/* user login page signup button only  */
+ button.but {
+   font-size: 20px; 
+   color:rgb(30, 136, 228); 
+   font-weight: bold; 
+   margin-top: 0;
+   /* position: relative;  */
+   margin-right: 7rem;
+   padding: 9px 8px; 
+   outline: 2px solid rgb(34, 233, 114);
+ } 
+
+/* login form input */
+ div.form-group input{
+  background-color: rgba(216, 221, 230, 0.824);
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  margin-top: 10px;
+ }
 
 /* form room */
 
@@ -226,28 +246,36 @@ div.flex-item.colors{
   font-size:3em;
   text-align:center;
 }
-
-.button{
+/* loginsign-up */
+button.button{
   font-family: Ubuntu, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  color:rgb(49, 216, 33);
-  margin-left: 60px;
-  padding: 1px 15px;
+  color:rgb(140, 30, 194);
+  margin-left: 10rem;
+  /* margin-bottom: auto; */
+  /* margin-left: 10rem; */
+  /* margin-bottom: 45rem; */
+  
+  /* position: absolute; */
+  top: 4px;
+  /* bottom: 0; */
+  padding: 12px;
+  outline: 2px solid rgb(110, 34, 233);
 }
- /* room collection font and button */
+ /* this is not room collection font and button */
 
 /* input for create room */
- div.form-group input{
+  div.form-group input{ 
   font-family: Ubuntu;
   font-size: 16px;
   font-weight: bold;
-  color:rgb(240, 9, 9);
+  /* color:rgb(240, 9, 9); */
   margin-left: 40px;
-  /* margin-top: 2px; */
+  margin-top: 2px;
   padding: 20px 15px;
   border-radius: 3em;
-  } 
+   }  
 
   div.RoomCollection input{
     margin-bottom: 12px;
@@ -310,14 +338,20 @@ div.circle-picker{
   margin-left: calc(14% - 4px);
   
 }
- 
+ /* pointer */
 input:hover{
   cursor: pointer;
   box-shadow: 5px 5px 30px;
 }
 
+input{
+  margin-bottom: 20px;
+  margin-left: o;
+}
+
 
 input:focus{
+  /* font-size: 2px; */
   outline: none;
   align-content: center;
   float:center;
@@ -384,29 +418,30 @@ button.update-room-name{
   outline: 2px solid rgb(233, 87, 34);
 }
 
-/* popup button */
-button.buddy{
-  color:red;
+/* popup button to update */
+ button.buddy {
+  color:rgb(0, 4, 255);
   font-family:Ubuntu; 
-  padding: 10px 15px;
+  font-weight: bold;
+  padding: 10px 10px;
   margin-left: 9px;
   margin-top: 20px;
-  outline: 2px solid rgb(233, 114, 34);
-}
+  outline: 2px solid rgb(69, 252, 33);
+ } 
 
-.form input{
+ .form input{
   min-width: 16em;
   height: 50px;
   padding: 0px 10px;
   border-radius: 2px;
-}
+ } 
 
 
 div.edit.room.name{
   font-family:Ubuntu; 
 }
 
-
+/* button select colors */
 select.hex-colors{
   margin-top: 20px;
   border-radius: 4px;
@@ -416,36 +451,21 @@ select.hex-colors{
 
 /* form for signup */
 
-/* div.form-group label{
+  div.form-sign-group label{
   font-family: Ubuntu; 
-  margin-left: 280px;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin-left: 22rem;
+
   
-} */
-/* 
-div.footer button.btn{
+  }   
+
+ /* div.footer button.btn{
   margin-left: 20em;
   padding-top: 16px;
-} */
+/* }  */ */
 
-
-/* .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  /* text-align: center; */
-  /* font-family: arial; */
- /* }  */ 
-
- /* div.card {
-  text-align: center;
-  border: rgba(179, 180, 244, 0.79) solid 4px;
-  padding: 1rem;
-  width: 11rem;
-  height: 20rem;
-  display: inline-flexbox;
-  margin: 2rem 2rem;
-  /* box-shadow: 3px 4px #daed32 */
-  /* }  */ 
 
 
 div.chicken{
@@ -458,41 +478,37 @@ div.chicken{
    outline: 1px  rgb(214, 214, 216);  
 }
 
-/* for hex color list */
-/* ul{
-  width: 50%;
-  margin-left: 25%;
-  padding: 0;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  list-style: none;
-/* } */
 
 
 
-/* li {
-  width: 51%;
-  min-width: 120px;
-  margin: auto;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-block;
-  z-index: 2;
-/* } */ 
+ 
 
 /* signup */
-
-div.form-groupA label{
+ 
+ /* div.sign-form-group {
   font-family:Ubuntu; 
   font-weight: bold;
-  font-size: 26px;
-  color:rgb(133, 236, 63);
-  margin-left: 9rem;
-  /* margin-inline: center; */
+  font-size: 13px;
+  margin-left: 12rem;
+  
+ /* }   */ 
+
+button.btnSU{
+  color:rgb(245, 11, 11);
+  font-family:Ubuntu; 
+  font-size: 22px;
+  font-weight:bold;
+  margin-left: 30rem;
+  padding: 10px 15px;
+  outline: 2px solid rgb(233, 87, 34);
 }
 
-div.form{
-  margin-left: 8rem;
+
+ label.password{
+  font-family: Ubuntu;
+  color:rgb(13, 0, 128);
 }
+ 
+
+
+

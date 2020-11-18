@@ -10,7 +10,7 @@ export class LoginForm extends Component {
         password: ""
       }
 
-
+        // handle submit for user login 
       handleSubmit =(evt) => {
         evt.preventDefault()
         console.log(this.props.getUser)
