@@ -43,11 +43,11 @@ function UserProfile(props) {
             <EditRoomForm room={room} updatedRoomFromState={props.updatedRoomFromState}/>
              : null}
              <AddCollectionColor colors={props.colors}ChangeSelectedColor={props.ChangeSelectedColor}room={room}/>
-
+                    
             <div className="RoomCollection">
                 {room.collections.map((collection) =>{
                     // console.log(collection)
-                    return <div className ="chicken"style={{backgroundColor: collection.color.hex_number}}></div>
+                return <div className="hex"style={{backgroundColor: collection.color.hex_number}}>.</div>
                 })}
   
                 <br></br>

@@ -18,6 +18,7 @@ class RoomForm extends Component {
     // make a post request to rooms to get the user #6 which is me
     handleSubmit=(evt)=>{
         evt.preventDefault()
+        evt.target.reset()
         fetch(`http://localhost:3000/rooms`,{
             method: "POST",
             headers: {
@@ -46,25 +47,25 @@ class RoomForm extends Component {
             <form onSubmit= {this.handleSubmit}>
                  <div className="form-group">
 
-            {/* <label htmlFor="Room-Name"></label> */}
+                {/* <label htmlFor="Room-Name"></label> */}
 
-            <br></br>
+                 <br></br>
         
-            <br></br>
+                 <br></br>
            
-            <button type="submit" className="but">Create Room</button>
-            <br></br>
-            <label htmlFor="Room-Name"></label>
-            <input type="text" classname="room"
+             <button type="submit" className="but">Create Room</button>
+                    <br></br>
+                <label htmlFor="Room-Name"></label>
+                 <input type="text" classname="room"
                
                 value={this.state.room}
                 onChange={this.handleRoom}/>
 
-            </div>
-            <div className="edit room name">
-            {/* <button type="submit" className="but">update</button> */}
+                </div>
+                <div className="edit room name">
+                {/* <button type="submit" className="but">update</button> */}
            
-            </div>
+                </div>
             </form>
         );
     }

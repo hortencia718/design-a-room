@@ -30,6 +30,7 @@ export class SignupForm extends Component {
         return (
             <div>
                   <h1>SignUp</h1>
+                  <br></br>
                  <form className="form-signup" onSubmit={this.handleSubmit}>
                      <div className="form-sign-group">
                          <label htmlFor="Firstname">First name</label>
@@ -39,7 +40,7 @@ export class SignupForm extends Component {
                          onChange={this.handleChange}/> 
                         </div> 
 
-                      <div className="form-group">
+                      <div className="form-signup">
                          <label htmlFor="Lastname">Last name</label>
                          <input type="text" id="last name" 
                         classname="lastname"
@@ -47,7 +48,7 @@ export class SignupForm extends Component {
                          onChange={this.handleChange}/> 
                         </div> 
 
-                        <div className="form-group">
+                        <div className="form-signup">
 
                          <label htmlFor="email">Email</label>
                          <input type="email" name="email"
@@ -56,7 +57,7 @@ export class SignupForm extends Component {
                          onChange={this.handleChange}/>
 
                         </div>
-                        <div className="form-group">
+                        <div className="form-signup">
                          <label className="password">Password</label>
                          <input type="password" className="password"
                                    value={this.state.password}

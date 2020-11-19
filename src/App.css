@@ -343,10 +343,16 @@ input:hover{
   cursor: pointer;
   box-shadow: 5px 5px 30px;
 }
-
+/* signup page input */
 input{
   margin-bottom: 20px;
-  margin-left: o;
+  margin-left: 12px;
+  padding: 8px;
+  font-size: 12px;
+  color:green;
+  box-shadow: gold;
+  border-radius: 4px;
+
 }
 
 
@@ -401,7 +407,7 @@ button.removebtn{
   
 }
 /* user profile li */
-div.RoomCollection li{
+ li{
   font-family: Ubuntu;
   color:rgb(35, 42, 240);
   font-weight:bold;
@@ -444,8 +450,8 @@ div.edit.room.name{
 /* button select colors */
 select.hex-colors{
   margin-top: 20px;
-  border-radius: 4px;
-  padding: 10px 15px;
+  border-radius: 4px; 
+  padding: 7px 7px;
   outline: 2px solid rgb(18, 14, 238);
 }
 
@@ -456,44 +462,79 @@ select.hex-colors{
   font-size: 20px;
   font-weight: bold;
   color: red;
-  margin-left: 22rem;
-
+  margin-left: 20rem;
   
   }   
+
+ /* input#first\name{
+  /* height: 50px; */
+  /* min-width: 14em; */
+  /* margin-left: 4rem; */
+  /* }   */
 
  /* div.footer button.btn{
   margin-left: 20em;
   padding-top: 16px;
-/* }  */ */
+/* }  */ 
 
 
-
-div.chicken{
+ /* colors for room collection */
+  div.hex{
   height: 4rem;
-  width: 40rem;
+  width: 30rem;
   margin-left: 25%;
   margin-bottom: auto;
   border-radius: 1rem;
   padding-left: 1rem;
-   outline: 1px  rgb(214, 214, 216);  
-}
+  outline: 2px  rgb(214, 214, 216);  
+  }   
 
 
 
 
  
 
-/* signup */
+/* signup page*/
+
+  form-signup{ 
+  height: 50px;
+  min-width: 14rem;
+  margin-left: 1rem;
+  outline: 2px solid goldenrod;
+  margin-top: 2rem;
+  box-shadow: gold;
+ } 
+
+
  
- /* div.sign-form-group {
-  font-family:Ubuntu; 
+   div.form-signup label {
+  font-family: Ubuntu; 
+  color: gold;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 20px;
   margin-left: 12rem;
-  
- /* }   */ 
 
-button.btnSU{
+  }  
+
+  input#last\name{
+    /* width: fit-content; */
+    height: 50px;
+    padding: 10px;
+    border-radius: 2px;
+    margin-left: 12px;
+    padding: 8px;
+  }
+
+
+   /* .signup{ */
+      /* font-family: 'Ubuntu'; */
+    /* font-size: 20px; */
+    /* color: rgb(255, 0, 153); */
+    /* font-weight: bold; */
+    /* margin-left: 18rem;
+  /* }      */ 
+
+ button.btnSU{
   color:rgb(245, 11, 11);
   font-family:Ubuntu; 
   font-size: 22px;
@@ -507,8 +548,19 @@ button.btnSU{
  label.password{
   font-family: Ubuntu;
   color:rgb(13, 0, 128);
+  /* min-width: 16em;
+  height: 50px;
+  padding: 0px 10px;
+  border-radius: 2px; */
+
 }
  
-
+/* hex color to the page after selecting a color */
+/* div.RoomCollection div{
+  width: 50%;
+  margin-left: 20px;
+  padding: 10px;
+  /* outline: 2px solid rgb(233, 87, 34); */
+/* }  */
 
 

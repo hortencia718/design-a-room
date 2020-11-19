@@ -76,14 +76,14 @@ class App extends React.Component {
 // }
 
 
-      // getUser=(user)=>{
-      //   console.log("get user", user)
-      //   this.setState({
-      //     user: user.user,
-      //     token: user.token,
-      //   })
-      //   this.props.history.push('/UserProfile')
-      // }
+      getUser=(user)=>{
+        console.log("get user", user)
+        this.setState({
+          user: user.user,
+          token: user.token,
+        })
+        this.props.history.push('/UserProfile')
+      }
 
       // this function below is getting all the room from the backend and setting the state
       // to all the rooms which is an array 
@@ -194,15 +194,15 @@ class App extends React.Component {
         })
       }
 
-    renderLogin=()=>{
+    renderLogin=() => {
       return <LoginForm getUser={this.getUser}/>
     }
 
-  renderSignup=()=>{
+  renderSignup=() => {
     return <SignupForm />
   }
 
-  logout=()=>{
+  logout=() =>{
     this.setState({
       user:[],
       token:"",
@@ -237,6 +237,7 @@ class App extends React.Component {
                       <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
                       deleteroomFromState={this.deleteroomFromState} ChangeSelectedColor={this.ChangeSelectedColor}
                      updatedRoomFromState={ this.updatedRoomFromState} colors={this.state.colors}/>
+   
                      </Route>
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
