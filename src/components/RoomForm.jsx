@@ -15,7 +15,8 @@ class RoomForm extends Component {
         })
     }
 
-    // make a post request to rooms to get the user #6 which is me
+    // make a post request to rooms to get the user #6 which is me reset input after 
+    // creating a new room 
     handleSubmit=(evt)=>{
         evt.preventDefault()
         evt.target.reset()

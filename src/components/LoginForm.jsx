@@ -77,7 +77,8 @@ export class LoginForm extends Component {
                                     
                      <form className="form" onSubmit={this.handleSubmit}>
                             <div className="card"></div>
-                              {/* <div classname="img">
+
+                              {/* if i decide to use img for login <div classname="img">
                               <img src="/images/avatar2/large/elyse.png">
                               
                              </div> */}
@@ -107,7 +108,7 @@ export class LoginForm extends Component {
                            </form>
                             </div>     
                      
-                    //  </div>
+         
 
            
             

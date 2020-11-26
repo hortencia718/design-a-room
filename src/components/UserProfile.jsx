@@ -21,9 +21,9 @@ function UserProfile(props) {
         
     })
 }
-    const handleupdate= (evt) =>{
-        console.log("hello")
-    }
+    // const handleupdate= (evt) =>{
+    //     console.log("hello")
+    // }
 
     let handleLogout= ()=>{
         props.logout()
@@ -32,6 +32,7 @@ function UserProfile(props) {
     let roomArray= props.rooms.map((room) => {
         // console.log(room)
         return <div>
+            {/* link is linking to room collection/color picker */}
            <Link to={`/${room.id}`}>
            <li>
                 {room.name}
@@ -42,7 +43,7 @@ function UserProfile(props) {
             {update ? 
             <EditRoomForm room={room} updatedRoomFromState={props.updatedRoomFromState}/>
              : null}
-             <AddCollectionColor colors={props.colors}ChangeSelectedColor={props.ChangeSelectedColor}room={room}/>
+             <AddCollectionColor colors={props.colors} ChangeSelectedColor={props.ChangeSelectedColor} room={room} />
                     
             <div className="RoomCollection">
                 {room.collections.map((collection) =>{
@@ -70,7 +71,7 @@ function UserProfile(props) {
  
         // </div>
     })
-    console.log(props.token)
+                    // console.log(props.token)
     return (
         <div className= "Containter">
                

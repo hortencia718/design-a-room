@@ -11,6 +11,8 @@ import RoomCollection from './components/RoomCollection';
 import CollectionShowPage from './components/CollectionShowPage';
 import EditRoomForm from './components/EditRoomForm';
 import SignupForm from './components/SignupForm';
+// import {ChromePicker} from 'react-color';
+// import AboutPage from './components/AboutPage';
 
 
 
@@ -22,7 +24,8 @@ class App extends React.Component {
   token:"",
   error:"",
   rooms:[],
-  colors:[]
+  colors:[],
+  collections:[]
   }
 
   //  handleLogin =(userInfo) => {
@@ -110,9 +113,9 @@ class App extends React.Component {
       
        }
         // this function will send a post request to the collection
-        // updated color from state hex color
+        // update a color from state hex color when selected
 
-        ChangeSelectedColor=(color_id,room) =>{
+        changeSelectedColor=(color_id,room, colors) =>{
           // console.log(this.data.data)
           fetch(`http://localhost:3000/collections`,{
             method: "POST",
@@ -121,7 +124,8 @@ class App extends React.Component {
             },
             body: JSON.stringify({
               room_id: room.id,
-              color_id: color_id
+              color_id: color_id,
+              colors: colors
             })
             
           })
@@ -154,12 +158,34 @@ class App extends React.Component {
                   rooms: copyOfRooms
                   })
         
-                  console.log("copy of rooms", copyOfRooms)
+                  // console.log("copy of rooms", copyOfRooms)
           })
+ 
+        }  
+        
 
-         
-        }
+                // make a copy of state 
+                
+                 // find the new colors to update
+                //  updating thestate with new colors
+               
+            
 
+                updatedColorArrayFromState =(updatedColor ) =>{
+                  console.log(updatedColor)
+             let copyOfState = [...this.state.colors,updatedColor]
+             this.setState =({
+               colors: copyOfState
+
+             })
+
+            }     
+                
+              // create a function for colors to be update the state ! the function will be passed down to the 
+              // roomcollection on line 253, in the room collection , handleclick will invoke this funtion in "rooms collcetion"
+              // which will update the the state in app.js.  
+              // 
+        
 
 
       // working on creating a room here fucntion will be sent to the form as prop
@@ -215,7 +241,7 @@ class App extends React.Component {
 
   render(){
 
-   console.log("this is state", this.state)
+  //  console.log("this is state", this.state)
   return(
     <div className="App">
       <br></br>
@@ -225,6 +251,7 @@ class App extends React.Component {
 
         {/* container for routes and switch */}
           <main>
+          {/* <CirclePicker/> */}
            {/* <LoginForm  handleSubmit={this.handleSubmit}/> */}
                     {/* <Router path="/SignupForm/:user_id" component={loginFrom} */}
                    {/* <Route path="/LoginForm" render={() => <UserProfile />} /> */}
@@ -234,15 +261,20 @@ class App extends React.Component {
                      <Route path="/login" render={this.renderLogin}/>
                      <Route path="/signup" render={this.renderSignup}/>
                       <Route path="/userprofile">
+                        <Route path="/">
+                        {/* <Route path="/aboutpage"render={this.renderAboutPage}> */}
+                        </Route>
                       <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
                       deleteroomFromState={this.deleteroomFromState} ChangeSelectedColor={this.ChangeSelectedColor}
                      updatedRoomFromState={ this.updatedRoomFromState} colors={this.state.colors}/>
-   
+                        
                      </Route>
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
                      <Route path = "/"
-                      render ={() => <RoomCollection/>}
+                      render ={() => <RoomCollection newupdatedColors={this.updatedColorArrayFromState}/>}
+
+                     
                       
                     // {this.updateRoomFromState}
                      />

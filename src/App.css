@@ -196,13 +196,13 @@ form.form {
 
 /* form room */
 
-
+/* colors displayed  */
 div.RoomCollection{
   font-size: 20px;
   font-weight: bold;
   /* text-align: center; */
   font-family:'Ubuntu', sans-serif;
-  color:rgb(235, 24, 168);
+  color:rgba(161, 153, 159, 0.048);
   margin-left: 4rem;
   margin-top: 2rem;
 
@@ -251,7 +251,7 @@ button.button{
   font-family: Ubuntu, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: bold;
-  color:rgb(140, 30, 194);
+  color:rgb(148, 30, 194);
   margin-left: 10rem;
   /* margin-bottom: auto; */
   /* margin-left: 10rem; */
@@ -316,22 +316,22 @@ div.color-picker{
   border-radius:10px;
   transition: background-color .3s;
 }
-/* color picker information not sure going to use */
-  div.color-picker input {
+/* color picker dropdown */
+  input.colorpicker {
   width: 20%;
-  margin-left: calc(45% - 4px);
+  margin-left: calc(46% - 4px);
   margin-bottom: 20px;
   padding: 2px 3px;
-  /* border: none; */
-  background: rgb(240, 149, 149);
-  box-shadow: 5px 5px 30px -5px rgba(112, 112, 112, 0.8);
+  background: rgb(225, 250, 5);
+  /* box-shadow: 5px 5px 30px -5px rgba(13, 9, 240, 0.8); */
   transition: box-shadow .3s;
 } 
 
-div.color-picker h2{
+div.color-picker h3{
   font-family:Ubuntu; 
-  color: rgb(89, 250, 57);
-  margin:center;
+  color: rgb(47, 34, 238);
+  margin-left: 68px;
+  margin-bottom: 4rem;
 }
 
 div.circle-picker{
@@ -385,16 +385,36 @@ div.keep{
   outline: 2px solid rgb(233, 87, 34);
   margin: 0 auto;
 }
-
+/* color picker room button */
 button.add{
   font-family: Ubuntu;
-  outline: 2px solid rgb(233, 87, 34);
-  margin: 0 auto;
-  display: out-side;
-  padding: 12px 15px;
+  outline: 3px solid rgb(233, 87, 34);
+  margin-left: 38rem;
+  /* margin-top: 12px; */
+  /* display: out-side; */
+  padding: 9px 9px;
   color: rgb(90, 27, 237);
   font-weight: bold;
+  font-size: 18px;
 }
+p{
+  font-family: Ubuntu;
+  color:blue;
+}
+
+
+button.addTo{
+  font-family: Ubuntu;
+  outline: 2px solid rgb(51, 34, 233);
+  margin-left: 2rem;
+  display: out-side;
+  padding: 12px 15px;
+  color: rgb(232, 68, 18);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
 
 /* remove button on userprofile */
 button.removebtn{
@@ -489,11 +509,6 @@ select.hex-colors{
   outline: 2px  rgb(214, 214, 216);  
   }   
 
-
-
-
- 
-
 /* signup page*/
 
   form-signup{ 
@@ -563,4 +578,20 @@ select.hex-colors{
   /* outline: 2px solid rgb(233, 87, 34); */
 /* }  */
 
-
+/* input for dropdownColorpicker */
+/* div.color-picker input{
+  margin-left: 34rem;
+  margin-bottom: 14px;
+} */
+/* not using  */
+/* input.colorpicker{
+  padding: 2px 3px;
+  margin-left: 34rem;
+  background: rgb(158, 149, 240);
+  width: 20%;
+  transition: box-shadow .3s;
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+/* } */ 
