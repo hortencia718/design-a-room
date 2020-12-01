@@ -25,7 +25,7 @@ class App extends React.Component {
   error:"",
   rooms:[],
   colors:[],
-  collections:[]
+  // collections:[]
   }
 
   //  handleLogin =(userInfo) => {
@@ -115,8 +115,8 @@ class App extends React.Component {
         // this function will send a post request to the collection
         // update a color from state hex color when selected
 
-        changeSelectedColor=(color_id,room, colors) =>{
-          // console.log(this.data.data)
+        changeSelectedColor=(color_id ,room) =>{
+          console.log("in change selected color", color_id)
           fetch(`http://localhost:3000/collections`,{
             method: "POST",
             headers: {
@@ -125,7 +125,7 @@ class App extends React.Component {
             body: JSON.stringify({
               room_id: room.id,
               color_id: color_id,
-              colors: colors
+              // colors: colors
             })
             
           })
@@ -167,18 +167,31 @@ class App extends React.Component {
                 // make a copy of state 
                 
                  // find the new colors to update
-                //  updating thestate with new colors
-               
+                //  updating the state with new colors here
             
+                updatedColorArrayFromState =(updatedColor) =>{ 
+                  console.log("updatedColor", updatedColor)
+                  // debugger
+                    fetch(`http://localhost:3000/colors`,{
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "Application/json"
+                      },
+                      body: JSON.stringify({
+                          hex_number: updatedColor,
+                          
+                      })
 
-                updatedColorArrayFromState =(updatedColor ) =>{
-                  console.log(updatedColor)
-             let copyOfState = [...this.state.colors,updatedColor]
-             this.setState =({
-               colors: copyOfState
+                  })
+                  .then(res => res.json())
+                  .then(newColor =>{
+                    let copyOfColors = [...this.state.colors,newColor]
 
-             })
+                    this.setState =({
+                      colors: copyOfColors
 
+                    })
+                  })  
             }     
                 
               // create a function for colors to be update the state ! the function will be passed down to the 
@@ -241,7 +254,7 @@ class App extends React.Component {
 
   render(){
 
-  //  console.log("this is state", this.state)
+   console.log("this is state", this.state.colors)
   return(
     <div className="App">
       <br></br>
@@ -265,7 +278,7 @@ class App extends React.Component {
                         {/* <Route path="/aboutpage"render={this.renderAboutPage}> */}
                         </Route>
                       <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
-                      deleteroomFromState={this.deleteroomFromState} ChangeSelectedColor={this.ChangeSelectedColor}
+                      deleteroomFromState={this.deleteroomFromState} changeSelectedColor={this.changeSelectedColor}
                      updatedRoomFromState={ this.updatedRoomFromState} colors={this.state.colors}/>
                         
                      </Route>
@@ -274,7 +287,7 @@ class App extends React.Component {
                      <Route path = "/"
                       render ={() => <RoomCollection newupdatedColors={this.updatedColorArrayFromState}/>}
 
-                     
+                      // newupdatedColors={this.updatedColorArrayFromState}/>
                       
                     // {this.updateRoomFromState}
                      />

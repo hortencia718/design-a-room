@@ -11,7 +11,7 @@ class CollectionShowPage extends Component {
 
     // this page is roomcollection page !
     render() {
-       console.log(this.props)
+    //    console.log(this.props)
         return (
             <div>
                 <h1></h1>
@@ -23,10 +23,10 @@ class CollectionShowPage extends Component {
                  <div className="flex-container"> 
                  <br></br> 
                   <div className="flex-item colors">1</div>
-                   <div className="flex-item colors">2</div>
-                    <div className="flex-item colors">3</div>
+                   {/* <div className="flex-item colors">2</div> */}
+                    {/* <div className="flex-item colors">3</div> */}
                 </div>
-
+                
               
                   
             </div>

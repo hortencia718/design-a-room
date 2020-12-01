@@ -7,15 +7,15 @@ export default class AddCollectionColor extends Component {
 // handles color change of selected color circles when selected 
     handleClick =(evt)=>{
     //    debugger 
-    console.log(this.props.room.color)
-     this.props.ChangeSelectedColor(evt.target.value, this.props.room)
+    // console.log("addcollection", this.props.room.color)
+     this.props.changeSelectedColor(evt.target.value, this.props.room)
     }
 
 
             // this r/t colors to user profile page
 
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         let turnColorsToLi =(hexcolor) => {
            return hexcolor.map(color => {
               
@@ -34,7 +34,7 @@ export default class AddCollectionColor extends Component {
                 
                 <form >
                     {/* <button className="select-hex-colors"></button> */}
-                   <select onClick= {this.props.handleClick} className="hex-colors">
+                   <select onClick= {this.handleClick} className="hex-colors">
                     {arrayOfColors}
                
                     </select>

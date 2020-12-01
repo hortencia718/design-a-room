@@ -103,7 +103,7 @@ export class LoginForm extends Component {
                                 type="submit"className="btn">Login</button>
                                <br></br>
                                 <br></br>
-                             <button type="submit" onClick={this.handleSignUp} className="but">Signup</button> 
+                             {/* <button type="submit" onClick={this.handleSignUp} className="but">Signup</button>  */}
                          </div>
                            </form>
                             </div>     

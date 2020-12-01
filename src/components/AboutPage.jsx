@@ -5,7 +5,7 @@ export default class AboutPage extends Component {
 
     render() {
       
-    
+    console.log("blah")
         return (
             <section id="container-about" className="about">
                 <h1>About Color me a Room</h1>

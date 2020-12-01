@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(-45deg, #95c6ad, #84f7ee,rgb(248, 100, 248), #f45430, #f3524f);
+    background: linear-gradient(-45deg, #95c6ad, #84f7ee,rgb(166, 29, 205), #f45430, #f3524f);
     background-size: 600% 600%;
     animation: gradient 15s ease infinite;
 }
@@ -595,3 +595,18 @@ select.hex-colors{
     transition-timing-function: ease;
     transition-delay: 0s;
 /* } */ 
+
+/* room colletion title */
+h2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(41, 111, 240);
+  margin-left: 120px;
+  padding-top: 22px;
+  padding-bottom: 50px;
+}
+
+h3{
+  color: rgb(97, 93, 93);
+  margin-left: 144px;
+  font-family: fantasy;
+}

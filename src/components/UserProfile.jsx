@@ -43,7 +43,7 @@ function UserProfile(props) {
             {update ? 
             <EditRoomForm room={room} updatedRoomFromState={props.updatedRoomFromState}/>
              : null}
-             <AddCollectionColor colors={props.colors} ChangeSelectedColor={props.ChangeSelectedColor} room={room} />
+             <AddCollectionColor colors={props.colors} changeSelectedColor={props.changeSelectedColor} room={room} />
                     
             <div className="RoomCollection">
                 {room.collections.map((collection) =>{
@@ -71,7 +71,7 @@ function UserProfile(props) {
  
         // </div>
     })
-                    // console.log(props.token)
+                    //  console.log(props.token)
     return (
         <div className= "Containter">
                

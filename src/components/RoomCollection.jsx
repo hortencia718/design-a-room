@@ -8,21 +8,9 @@ class  RoomCollection extends React.Component {
   
     state ={
         background: '#fff',
-        color_id:[],
-        // collection_id: [],
-
-        // displayColorPicker: false,
-        // defaulColor: "#fff",
-        //  changeColor: "#fff",
-        color:{
-            r: "0",
-            g: "f",
-            b: "153",
-            a: "1"
-        }
     };
 
-                // color picker code 
+                // color picker code from
             // this to handle the handle click on the color picker color option
             // handleClick=() =>{
             //     this.setState({displayColorPicker: true});
@@ -50,72 +38,63 @@ class  RoomCollection extends React.Component {
     //   }
     
 //   }
+
+   
             
                 // handles the change to the state for the circle picker on click 
-            handleClick = (evt, colors) => {
-                evt.preventDeault()
-                // debugger
-                // console.log(" when I click the color I get is")
-                let newColors=[colors, ...this.state.colors]
-                this.setState({
-                colors:  newColors 
-                })
-            }
+        
                
 
-                // function to call everytime the color is changed store 
-                // the color in state
+            
 
-                //  handleChange=(evt)=>{
-                //     //  console.log(evt.target.value)
-                //      this.setState({
-                //          colors: evt.target.value
-                //      })
-                 
-                //     //  color={
-                //     //      hex:'#FF5722'
-                //     //  }
-                //  }
-
-        handleChangeComplete =(color) => {
-            this.setState({ background: color.hex });
-           // debugger
-           
+            handleChangeComplete =(color) => {
+                // console.log("color", color)
+                this.setState({ background: color.hex });
+              // debugger
+                this.props.newupdatedColors(this.state.background)
             };
 
             
         
 
             handleSubmit =(evt) =>{
-               console.log(evt)
+            //    console.log(evt)
                 // debugger
-                fetch(`http://localhost:3000/colors`,{
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "Application/json"
-                    },
-                    body: JSON.stringify({
-                        hex_number: this.state.background,
+                // fetch(`http://localhost:3000/colors`,{
+                //     method: "POST",
+                //     headers: {
+                //         "Content-Type": "Application/json"
+                //     },
+                //     body: JSON.stringify({
+                //         hex_number: this.state.background,
                         
-                    })
+                //     })
 
-                })
-                .then(res => res.json())
-                .then(color =>{
-                    // console.log(color)
-                    // this.setState({color})
-                })
+                // })
+                // .then(res => res.json())
+                // .then(color =>{
+                //     // console.log(color)
+                //     // this.setState({color})
+                // })
                   
             }
 
-    
+                     
     render(){
     
-
+        // console.log("this props", this.props)
         // console.log("where are my colors", this.state)
     return (
        
         <div className="color-circle-picker">
+        
+        <div>
+            <h2>Explore Colors to add to your collections </h2> 
+        </div>
+        <div>
+            <h3> Select a color from below in the CirclePicker</h3>
+        </div>
+               
             
          <div>
         <br></br>
@@ -130,18 +109,18 @@ class  RoomCollection extends React.Component {
                             {/* this is for the color picker only not using */}
             <input  className= "colorpicker" type="color" value="#ffffff"></input>
             
-            <CirclePicker handleClick= {this.handleClick} color={this.state.color_id} updatedColor={this.props.updatedColorArrayFromState}
+            <CirclePicker  color={this.state.color_id} updatedColor={this.props.updatedColorArrayFromState}
             onChangeComplete={ this.handleChangeComplete }/>
 
             {/* once you pick a color saves it take color picked fetch and add to array of colors  */}
                 {/* <button onClick={this.handleSubmit}>Submit</button> */}
 
-                        {/* circle color */}
-                    <section>
+                        {/* { circle color } */}
+                      <section>
                         <div class="picked-color">
                             <ul></ul>
                         </div>
-                    </section>
+                    </section> 
                 {/* <div className="Container add collection button"> 
 
                 {/* <div className="keep">AddToCollection</div> */}
@@ -150,7 +129,7 @@ class  RoomCollection extends React.Component {
 
                
                 {/* <button type="submit" className="add">Save</button> */}
-                {/* <button type="submit" className="addTo">colors </button> */}
+                {/* <button type="submit" className="addTo"> my colors </button> */}
                 </div> 
             </div>
     )
