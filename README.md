@@ -1,3 +1,10 @@
+Color me a room App
+
+this app was desinged to help a user create a color collection to help design a Room in thier home .
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
