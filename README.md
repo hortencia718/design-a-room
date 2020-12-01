@@ -1,6 +1,4 @@
-Color me a room App
 
-this app was desinged to help a user create a color collection to help design a Room in thier home .
 
 
 
