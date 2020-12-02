@@ -1,10 +1,23 @@
 # Getting Started with Create React App
 
+"Color me a Room was created to help a user create a collection of colors to help design a room in thier home"  
+Returning User Can login with Full name and Password
+A User can Signup  , First name ,Last name and creating a Password 
+User can create a New room 
+User can update any Room 
+User Can also edit a new room as well as an existing Room
+User can Delete an existing Room and or a newly created Room
+User Can Choose from a drop down option of Colors to add to A room 
+User can Pick a color from a Circle picker which will add that color to thier Profile drop down menu
+Pop alert indicating that color was added to your profile page in the drop down menu of colors 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
 
 ### `yarn start`
 

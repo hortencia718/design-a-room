@@ -598,7 +598,7 @@ select.hex-colors{
 
 /* room colletion title */
 h2{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Ubuntu;
   color: rgb(41, 111, 240);
   margin-left: 120px;
   padding-top: 22px;
@@ -606,7 +606,7 @@ h2{
 }
 
 h3{
-  color: rgb(97, 93, 93);
+  color: rgb(19, 22, 230);
   margin-left: 144px;
-  font-family: fantasy;
+  font-family: Ubuntu;
 }

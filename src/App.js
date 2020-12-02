@@ -11,6 +11,7 @@ import RoomCollection from './components/RoomCollection';
 import CollectionShowPage from './components/CollectionShowPage';
 import EditRoomForm from './components/EditRoomForm';
 import SignupForm from './components/SignupForm';
+import {Button, Modal } from 'semantic-ui-react'
 // import {ChromePicker} from 'react-color';
 // import AboutPage from './components/AboutPage';
 
@@ -25,7 +26,7 @@ class App extends React.Component {
   error:"",
   rooms:[],
   colors:[],
-  // collections:[]
+  
   }
 
   //  handleLogin =(userInfo) => {
@@ -79,44 +80,43 @@ class App extends React.Component {
 // }
 
 
-      getUser=(user)=>{
-        console.log("get user", user)
-        this.setState({
-          user: user.user,
-          token: user.token,
-        })
-        this.props.history.push('/UserProfile')
-      }
+          getUser=(user)=>{
+            console.log("get user", user)
+            this.setState({
+              user: user.user,
+              token: user.token,
+            })
+            this.props.history.push('/UserProfile')
+          }
 
-      // this function below is getting all the room from the backend and setting the state
-      // to all the rooms which is an array 
+          // this function below is getting all the room from the backend and setting the state
+          // to all the rooms which is an array 
 
-      componentDidMount(){
-        fetch(`http://localhost:3000/rooms`)
-        .then(res => res.json())
-        .then(roomsArray =>{
-          this.setState({
-            rooms: roomsArray,
-            name:""
+          componentDidMount(){
+            fetch(`http://localhost:3000/rooms`)
+            .then(res => res.json())
+            .then(roomsArray =>{
+              this.setState({
+                rooms: roomsArray,
+                name:""
+              })
+      })
+
+
+          fetch(`http://localhost:3000/colors`)
+          .then(res => res.json())
+          .then(colorArray =>{
+            this.setState({
+              colors: colorArray,
+
+            })
           })
-  })
-
-
-     fetch(`http://localhost:3000/colors`)
-     .then(res => res.json())
-     .then(colorArray =>{
-       this.setState({
-         colors: colorArray,
-
-       })
-     })
-      
-       }
-        // this function will send a post request to the collection
-        // update a color from state hex color when selected
+            
+            }
+        
 
         changeSelectedColor=(color_id ,room) =>{
-          console.log("in change selected color", color_id)
+          // console.log("in change selected color", color_id)
           fetch(`http://localhost:3000/collections`,{
             method: "POST",
             headers: {
@@ -125,7 +125,7 @@ class App extends React.Component {
             body: JSON.stringify({
               room_id: room.id,
               color_id: color_id,
-              // colors: colors
+              
             })
             
           })
@@ -162,12 +162,7 @@ class App extends React.Component {
           })
  
         }  
-        
-
-                // make a copy of state 
                 
-                 // find the new colors to update
-                //  updating the state with new colors here
             
                 updatedColorArrayFromState =(updatedColor) =>{ 
                   console.log("updatedColor", updatedColor)
@@ -194,73 +189,67 @@ class App extends React.Component {
                   })  
             }     
                 
-              // create a function for colors to be update the state ! the function will be passed down to the 
-              // roomcollection on line 253, in the room collection , handleclick will invoke this funtion in "rooms collcetion"
-              // which will update the the state in app.js.  
-              // 
+               
         
+            createNewRoom=(newroom)=>{
+              let copyOfRooms = [newroom,...this.state.rooms]
+              this.setState({
+                rooms: copyOfRooms
+              })
+              // console.log(newroom, "in app")
+            }
 
+            // this is updating a room
+            updatedRoomFromState=(updatedRoom)=>{
+              // debugger
+              let updatedArray= this.state.rooms.map((room)=>{
+                if(room.id === updatedRoom.id){
+                  return updatedRoom
+                }else{
+                  return room
+                }
+              })
+              this.setState({
+                rooms:updatedArray
+              })
+            }
 
-      // working on creating a room here fucntion will be sent to the form as prop
-      createNewRoom=(newroom)=>{
-        let copyOfRooms = [newroom,...this.state.rooms]
-        this.setState({
-          rooms: copyOfRooms
-        })
-        // console.log(newroom, "in app")
-      }
+              // deleting a
+            deleteroomFromState=(deletedRoom) =>{
+              let updatedArray= this.state.rooms.filter(room => room.id !== deletedRoom.id)
+              this.setState({
+                rooms:updatedArray
+              })
+            }
 
-      // this is updating a room
-      updatedRoomFromState=(updatedRoom)=>{
-        // debugger
-        let updatedArray= this.state.rooms.map((room)=>{
-          if(room.id === updatedRoom.id){
-            return updatedRoom
-          }else{
-            return room
+          renderLogin=() => {
+            return <LoginForm getUser={this.getUser}/>
           }
-        })
-        this.setState({
-          rooms:updatedArray
-        })
-      }
 
-        // deleting a
-      deleteroomFromState=(deletedRoom) =>{
-        let updatedArray= this.state.rooms.filter(room => room.id !== deletedRoom.id)
-        this.setState({
-          rooms:updatedArray
-        })
-      }
+        renderSignup=() => {
+          return <SignupForm />
+        }
 
-    renderLogin=() => {
-      return <LoginForm getUser={this.getUser}/>
-    }
+          logout=() =>{
+            this.setState({
+              user:[],
+              token:"",
+              error:"",
+              rooms:[],
+              colors:[]
+            })
+            this.props.history.push('/login')
+          }
 
-  renderSignup=() => {
-    return <SignupForm />
-  }
+          render(){
 
-  logout=() =>{
-    this.setState({
-      user:[],
-      token:"",
-      error:"",
-      rooms:[],
-      colors:[]
-    })
-    this.props.history.push('/login')
-  }
-
-  render(){
-
-   console.log("this is state", this.state.colors)
-  return(
-    <div className="App">
-      <br></br>
-       <h1 className="rainbow-text">Color me a Room</h1>
-        <br></br>
-        
+          // console.log("this is state", this.state.colors)
+          return(
+            <div className="App">
+              <br></br>
+              <h1 className="rainbow-text">Color me a Room</h1>
+                <br></br>
+              
 
         {/* container for routes and switch */}
           <main>
@@ -275,7 +264,7 @@ class App extends React.Component {
                      <Route path="/signup" render={this.renderSignup}/>
                       <Route path="/userprofile">
                         <Route path="/">
-                        {/* <Route path="/aboutpage"render={this.renderAboutPage}> */}
+                        {/* <AboutPage/> */}
                         </Route>
                       <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
                       deleteroomFromState={this.deleteroomFromState} changeSelectedColor={this.changeSelectedColor}
@@ -285,7 +274,7 @@ class App extends React.Component {
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
                      <Route path = "/"
-                      render ={() => <RoomCollection newupdatedColors={this.updatedColorArrayFromState}/>}
+                      render ={() => <RoomCollection newupdatedColors={this.updatedColorArrayFromState} />}
 
                       // newupdatedColors={this.updatedColorArrayFromState}/>
                       
@@ -296,7 +285,7 @@ class App extends React.Component {
                    </Switch>   
           </main>
            
-                {/* create a link to links  */}
+            
           
 
     
