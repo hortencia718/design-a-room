@@ -1,3 +1,8 @@
+
+
+
+
+
 # Getting Started with Create React App
 
 "Color me a Room was created to help a user create a collection of colors to help design a room in thier home"  
