@@ -5,6 +5,7 @@ import EditRoomForm from './EditRoomForm'
 import AddCollectionColor from './AddCollectionColor'
 
 
+
 function UserProfile(props) {
     const [update, setUpdate] = useState(false)
    // handle delete here 
@@ -69,8 +70,11 @@ function UserProfile(props) {
  
        
     })
-                   
+              let name = ` View My Collection` 
+            //   let info=` you can create room, add a color delete a color update a room and remove a room`
+           
             return (
+               
                 <div className= "Containter">
                     
                     <div className="logoutbtn">
@@ -81,7 +85,11 @@ function UserProfile(props) {
 
                 <div className ="RoomCollection">
                 
-                <h1> My Collection</h1>
+               
+               <div>
+                 <h1> {name}</h1>
+                 {/* <li>{info} </li> */}
+                   </div> 
                {/* <button type="submit" className="add">Edit</button> */}
                {/* <button type="submit" className="delete">X</button> */}
                  <RoomForm createNewRoom={props.createNewRoom} />

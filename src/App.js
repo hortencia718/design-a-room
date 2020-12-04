@@ -9,9 +9,9 @@ import UserProfile from './components/UserProfile'
 import {CirclePicker} from 'react-color';
 import RoomCollection from './components/RoomCollection';
 import CollectionShowPage from './components/CollectionShowPage';
-import EditRoomForm from './components/EditRoomForm';
+// import EditRoomForm from './components/EditRoomForm';
 import SignupForm from './components/SignupForm';
-import {Button, Modal } from 'semantic-ui-react'
+import { Modal } from 'semantic-ui-react';
 // import {ChromePicker} from 'react-color';
 // import AboutPage from './components/AboutPage';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
   error:"",
   rooms:[],
   colors:[],
-  
+  // collections:[]
   }
 
   //  handleLogin =(userInfo) => {
@@ -113,6 +113,14 @@ class App extends React.Component {
           })
             
             }
+
+                // delete color from room 
+            // deleteSelectedColor=(deletedcolor) =>{
+            //   let updatedArray= this.state.rooms.filter(room => room.id !== deletedRoom.id)
+            //   this.setState({
+            //     rooms:updatedArray
+            //   })
+            // }
         
 
         changeSelectedColor=(color_id ,room) =>{
@@ -158,7 +166,7 @@ class App extends React.Component {
                   rooms: copyOfRooms
                   })
         
-                  // console.log("copy of rooms", copyOfRooms)
+          
           })
  
         }  
@@ -166,7 +174,7 @@ class App extends React.Component {
             
                 updatedColorArrayFromState =(updatedColor) =>{ 
                   console.log("updatedColor", updatedColor)
-                  // debugger
+                 
                     fetch(`http://localhost:3000/colors`,{
                       method: "POST",
                       headers: {
@@ -214,7 +222,7 @@ class App extends React.Component {
               })
             }
 
-              // deleting a
+              // deleting a room
             deleteroomFromState=(deletedRoom) =>{
               let updatedArray= this.state.rooms.filter(room => room.id !== deletedRoom.id)
               this.setState({
@@ -269,12 +277,13 @@ class App extends React.Component {
                       <UserProfile logout={this.logout} token={this.state.token} rooms={this.state.rooms} createNewRoom={this.createNewRoom} 
                       deleteroomFromState={this.deleteroomFromState} changeSelectedColor={this.changeSelectedColor}
                      updatedRoomFromState={ this.updatedRoomFromState} colors={this.state.colors}/>
+                     
                         
                      </Route>
                      <Route path ="/:id"
                      render = {(routerProps) => <CollectionShowPage colors={this.state.colors} routerProps={routerProps}/>}/>
                      <Route path = "/"
-                      render ={() => <RoomCollection newupdatedColors={this.updatedColorArrayFromState} />}
+                      render ={() => <RoomCollection newupdatedColors={this.updatedColorArrayFromState}/>}
 
                       // newupdatedColors={this.updatedColorArrayFromState}/>
                       

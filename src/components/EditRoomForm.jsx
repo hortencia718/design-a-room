@@ -10,7 +10,7 @@ import React, { Component } from 'react'
         this.setState({
             name: evt.target.value
         })
-        // console.log(evt)
+        
     }
         // fetch patch a room, 
         // app=> user profile-> editroomform
@@ -45,13 +45,13 @@ import React, { Component } from 'react'
             // handlechange for room edit
           <form onSubmit= {this.handleSubmit} >
            
-            <input type="text" name="name" value={this.state.name} onChange={this.handleRoomname}>
+            <input type="text" Classname="name" value={this.state.name} onChange={this.handleRoomname}>
 
                 </input> 
                
               
             <button type="submit" className="buddy">
-              change name 
+              New name 
             </button>
             </form>
            

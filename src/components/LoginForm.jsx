@@ -67,7 +67,7 @@ export class LoginForm extends Component {
     render() {
         let {formName} = this.props
         // let {firstname,lastname, email, password} = this.state
-        console.log(this.props)
+        // console.log(this.props)
 
 
             return (
@@ -76,23 +76,21 @@ export class LoginForm extends Component {
                      <div className= "header">Login</div>
                                     
                      <form className="form" onSubmit={this.handleSubmit}>
-                            <div className="card"></div>
+                       <div className="flex-container">
+                       <div className="card"></div>
+                       </div>
+                          
 
-                              {/* if i decide to use img for login <div classname="img">
-                              <img src="/images/avatar2/large/elyse.png">
-                              
-                             </div> */}
-
-                             <div className="form-group">
+                             <div className="form-group-email">
 
                               <label htmlFor="email">Email</label>
                               <input type="email" name="email"
-                            //    placeholder="email"
+                            
                                value={this.state.email}
                               onChange={this.handleChange}/>
 
                              </div>
-                             <div className="form-group">
+                             <div className="form-group-password">
                               <label htmlFor="password">Password</label>
                               <input type="password" name="password"
                                         value={this.state.password}
@@ -105,6 +103,7 @@ export class LoginForm extends Component {
                                 <br></br>
                              {/* <button type="submit" onClick={this.handleSignUp} className="but">Signup</button>  */}
                          </div>
+                         
                            </form>
                             </div>     
                      

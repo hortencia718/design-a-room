@@ -86,10 +86,6 @@ div.header{
 }
 
 
-/* login form button */
-/* div.footer{
-  align-right: 0;
-/* } */
 
 .form-group label{
   font-family:'Ubuntu';
@@ -107,29 +103,11 @@ form.form {
   align-items: center;
   position: relative;
 }
-/*  */
-/* .form-group:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top:-5px;
-  left:-5px;
-  right:-5px;
-  bottom: -5px;
-  z-index:1;
-  background-image: linear-gradient(to bottom right,orange,rgb(64, 165, 233));
-  flex-direction: column;
-  /* align-items: flex-start; */
-  /* color: rgb(237, 107, 38); */
-  /* font-size: 18px; */
-  /* width: fit-content; */
-  /* label { */
-    /* font-size: 18px; */
-  /* }} */
+
 
   
  /* login input group  */
- div.form-group input { 
+ /* div.form-group input { 
    margin-top: 9px; 
    margin-left:4px;
   min-width: 14em;
@@ -142,7 +120,7 @@ form.form {
   background-color: rgba(216, 221, 230, 0.824);
   border: 0;
   border-radius: 10px;
- }
+ /* } */ 
 
 
   /* button.button-btn{
@@ -159,14 +137,14 @@ form.form {
   
 
 /* login button only */
-  button.btn{
+  div.footer button.btn{
    font-size: 20px;
    color:rgb(228, 30, 205);
-   margin-top: 2rem;
-   margin-left: 0; 
-   /* margin-bottom: 4px; */
+    /* align-self: center; */
+   margin-top: 4rem;
+   margin-left: 120px;
+   margin-bottom: 4px;
    font-weight: bold;
-   position: relative;
    padding: 10px 15px; 
    outline: 2px solid rgb(226, 77, 23);
 
@@ -185,14 +163,49 @@ form.form {
  } 
 
 /* login form input */
- div.form-group input{
-  background-color: rgba(216, 221, 230, 0.824);
-  border: 0;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  margin-left: 12px;
-  margin-top: 10px;
+ div.form-group-email input{
+  background-color: rgba(250, 250, 250, 0.824);
+    border: 0;
+    font-family: 'Ubuntu';
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    outline: 2px solid rgb(34, 193, 233);
+    /* min-width: 14em; */
+    /* height: 50px; */
+    /* padding: 10px;
+    font-size: 14px;
+    color: deeppink;
+    font-weight:bold; */
+  
  }
+
+ /* login pw input*/
+ div.form-group-password input{
+  background-color: rgba(250, 250, 250, 0.824);
+    border: 0; 
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    outline: 2px solid rgb(34, 193, 233);
+ }
+
+  /* login label email/pw */
+  div.form-group-email label{
+    font-family: 'Ubuntu';
+    font-size: 24px;
+    font-weight: 22px;
+    color: deeppink;
+  }
+
+  div.form-group-password label{
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-weight: 22px;
+    color: deeppink;
+  }
+
+
 
 /* form room */
 
@@ -253,33 +266,40 @@ button.button{
   font-weight: bold;
   color:rgb(148, 30, 194);
   margin-left: 10rem;
-  /* margin-bottom: auto; */
-  /* margin-left: 10rem; */
-  /* margin-bottom: 45rem; */
-  
   /* position: absolute; */
   top: 4px;
-  /* bottom: 0; */
   padding: 12px;
   outline: 2px solid rgb(110, 34, 233);
 }
- /* this is not room collection font and button */
+
 
 /* input for create room */
-  div.form-group input{ 
+  /* .room input{ 
   font-family: Ubuntu;
   font-size: 16px;
   font-weight: bold;
-  /* color:rgb(240, 9, 9); */
-  margin-left: 40px;
-  margin-top: 2px;
-  padding: 20px 15px;
-  border-radius: 3em;
-   }  
-
-  div.RoomCollection input{
+  /* color:rgb(228, 111, 111); */
+  /* margin-left: 180px; */
+  /* margin-bottom: 16px; */
+  /* padding: 20px ; */
+   /* }   */ 
+   /* spacing between creating the room */
+  /* div.RoomCollection input{
     margin-bottom: 12px;
     margin-top: 10px;
+  /* } */ 
+
+
+  /* input for create room and update name final */
+  div.RoomCollection form input{
+    font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: bold;
+  color:rgb(240, 9, 9);
+  margin-left: 80px;
+  margin-bottom: 16px;
+  padding: 14px ;
+  outline: 2px solid rgb(52, 12, 252);
   }
 
 
@@ -309,7 +329,7 @@ button.button{
 /* color picker */
 div.color-picker{
   width:84%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Ubuntu;
   color:rgb(237, 62, 31);
   font-size:16px;
   margin-left: 8%;
@@ -344,14 +364,17 @@ input:hover{
   box-shadow: 5px 5px 30px;
 }
 /* signup page input */
-input{
+.form-group-createRoom input{
   margin-bottom: 20px;
+  margin-top: 16px;
   margin-left: 12px;
-  padding: 8px;
-  font-size: 12px;
+  /* padding: 8px; */
+  font-size: 14px;
   color:green;
   box-shadow: gold;
   border-radius: 4px;
+  padding: 12px;
+  outline: 2px solid rgb(87, 34, 233);
 
 }
 
@@ -397,7 +420,8 @@ button.add{
   font-weight: bold;
   font-size: 18px;
 }
-p{
+
+p {
   font-family: Ubuntu;
   color:blue;
 }

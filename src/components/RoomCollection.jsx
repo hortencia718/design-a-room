@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 import React from 'react'
 import {CirclePicker} from 'react-color';
 // import {ChromePicker} from 'react-color';
@@ -13,7 +13,7 @@ class  RoomCollection extends React.Component {
             
 
                 handleChangeComplete =(color) => {
-                    // alert("your color has been added to your collection")
+                    alert("your color has been added to your collection")
                     // console.log("color", color)
                     this.setState({ background: color.hex });
                 // debugger
@@ -67,13 +67,8 @@ class  RoomCollection extends React.Component {
                 <div>
                      <br></br>
                  <div style={{color:this.state.background}}>
-                    {/* <Button
-                                className="select-color-btn"
-                                onClick={this.handleClick}>
-                                Select a color
-                            </Button> }
-                            { {this.state.displayColorPicker ?}() */}
-                </div>
+                   
+             </div>
                                 {/* this is for the color picker only not using */}
                 <input  className= "colorpicker" type="color" value="#ffffff"></input>
                 
@@ -81,11 +76,10 @@ class  RoomCollection extends React.Component {
                 onChangeComplete={ this.handleChangeComplete }/>
 
            
-                {/* <button onClick={this.handleSubmit}>Submit</button> */}
-
                         {/* { circle color } */}
                       <section>
                         <div class="picked-color">
+                    
                             <ul></ul>
                         </div>
 
@@ -94,10 +88,8 @@ class  RoomCollection extends React.Component {
                                 {/* for input */}
                 {/* <div className="keep">AddToCollection</div> */}
                 {/* <button type="submit" className="trash">save to</button> */}
-
-
                
-                 {/* <button type="submit" className="add">Save</button> */}
+                            {/* would use for input after adding selected color  */}
                  {/* <button type="submit" className="addTo"> added color </button> */}
                 </div> 
             </div>

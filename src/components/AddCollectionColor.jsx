@@ -4,16 +4,16 @@ import React, { Component } from 'react'
 export default class AddCollectionColor extends Component {
 
 
-                //handles color change for circle picker
+               
                 handleClick =(evt)=>{
-                    alert("your color has been added to your collection");
+                
                 // console.log("addcollection", this.props.room.color)
                 this.props.changeSelectedColor(evt.target.value, this.props.room)
                 }
 
 
-            // this r/t colors to user profile page
-
+           
+                // r/t colors to the user profile
                 render() {
                     // console.log(this.props)
                     let turnColorsToLi =(hexcolor) => {

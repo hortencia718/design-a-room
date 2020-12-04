@@ -4,10 +4,6 @@ class CollectionShowPage extends Component {
 
 
         
-        //     fetch(`http://localhost:3000/rooms)
-        //     .then(res => res.json())
-        //     .then(()=>{})
-       
 
     // this page is roomcollection page !
     render() {
@@ -23,7 +19,7 @@ class CollectionShowPage extends Component {
                  <div className="flex-container"> 
                  <br></br> 
                   <div className="flex-item colors">1</div>
-                   {/* <div className="flex-item colors">2</div> */}
+                   <div className="flex-item colors">2</div>
                     {/* <div className="flex-item colors">3</div> */}
                 </div>
                 
